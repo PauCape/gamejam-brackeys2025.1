@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://da64jhuj3rbef"]
+
+[ext_resource type="Script" path="res://Scripts/drop_area.gd" id="1_vmcms"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5xit"]
+size = Vector2(128, 128)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["dropable"]]
+script = ExtResource("1_vmcms")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b5xit")
