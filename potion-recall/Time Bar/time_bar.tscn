@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5p1x6kesl7ss"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31ru2"]
+bg_color = Color(0.827451, 0.282353, 0.207843, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ku610"]
+bg_color = Color(0.198, 0.66, 0.3289, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="TimeBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_31ru2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ku610")
+value = 73.78
+show_percentage = false
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

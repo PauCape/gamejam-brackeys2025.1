@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://or3f4o30gqij"]
+
+[ext_resource type="Script" path="res://Time Bar/game_time.gd" id="1_tqbbm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q0isd"]
+font_size = 40
+
+[node name="GameTime" type="Node"]
+script = ExtResource("1_tqbbm")
+
+[node name="timeStatus" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.0
+offset_right = 53.0
+offset_bottom = 49.0
+grow_horizontal = 2
+text = "00:30"
+label_settings = SubResource("LabelSettings_q0isd")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
