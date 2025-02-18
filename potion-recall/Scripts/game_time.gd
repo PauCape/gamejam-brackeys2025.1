@@ -1,6 +1,6 @@
 extends Node
 
-var startTime: float = 30.0
+var startTime: float = 5.0
 var sec = startTime
 var minute = 0.0
 var currentTime = startTime
@@ -15,12 +15,14 @@ func game_time():
 		countdown()
 		$timeStatus.text = str(minute) + "0" + ":" + str(sec)
 	else:
-		sec = startTime - 1
-		if minute > 0:
-			minute -= 1
-			$timeStatus.text = str(minute) + ":" + str(sec)
-		else:
-			$Timer.stop()
+		$TimeOutScreen.time_out_screen()
+	#else:
+		#sec = startTime - 1
+		#if minute > 0:
+			#minute -= 1
+			#$timeStatus.text = str(minute) + ":" + str(sec)
+		#else:
+			#$Timer.stop()
 
 func countdown():
 	currentTime -= 1

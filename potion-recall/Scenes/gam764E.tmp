@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://or3f4o30gqij"]
+[gd_scene load_steps=6 format=3 uid="uid://or3f4o30gqij"]
 
 [ext_resource type="Script" path="res://Scripts/game_time.gd" id="1_7vix6"]
 [ext_resource type="FontFile" uid="uid://dnlko8yo8bgk" path="res://Assets/LilitaOne-Regular.ttf" id="2_j7ygt"]
 [ext_resource type="PackedScene" uid="uid://c5p1x6kesl7ss" path="res://Scenes/time_bar.tscn" id="2_vp0xp"]
 [ext_resource type="PackedScene" uid="uid://c81rt3xjm5346" path="res://Scenes/play_button.tscn" id="3_rmm86"]
-[ext_resource type="PackedScene" uid="uid://co4wbftifup6" path="res://Scenes/time_out_screen.tscn" id="5_wcwhr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q0isd"]
 font = ExtResource("2_j7ygt")
@@ -17,6 +16,7 @@ shadow_color = Color(0, 0, 0, 1)
 
 [node name="GameTime" type="Node"]
 script = ExtResource("1_7vix6")
+startTime = 28.135
 
 [node name="timeStatus" type="Label" parent="."]
 anchors_preset = 5
@@ -48,8 +48,6 @@ offset_left = 399.0
 offset_top = 147.0
 offset_right = 496.0
 offset_bottom = 201.0
-
-[node name="TimeOutScreen" parent="." instance=ExtResource("5_wcwhr")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

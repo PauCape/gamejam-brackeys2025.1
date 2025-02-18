@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://co4wbftifup6"]
+
+[ext_resource type="Script" path="res://Scripts/time_out_screen.gd" id="1_d1uqq"]
+[ext_resource type="FontFile" uid="uid://dnlko8yo8bgk" path="res://Assets/LilitaOne-Regular.ttf" id="1_npr4l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56cpg"]
+bg_color = Color(0.16, 0.16, 0.16, 0.772549)
+
+[node name="TimeOutScreen" type="Control" node_paths=PackedStringArray("visible_ui")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d1uqq")
+visible_ui = NodePath("Panel")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_56cpg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -34.0
+offset_right = 155.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/normal_font = ExtResource("1_npr4l")
+theme_override_font_sizes/normal_font_size = 57
+bbcode_enabled = true
+text = "[rainbow freq=.5 sat=0.8 val=0.9][wave amp = 1000.0 freq=10.0 connected=1]Time Out![/wave][/rainbow]"
