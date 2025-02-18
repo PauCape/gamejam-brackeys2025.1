@@ -3,10 +3,17 @@ extends Control
 var items = ["apple", "watermelon", "potato", "tomato", "cucumber", "carrot", "pear", "pinapple"]
 var levelNumber = 1
 
+var clock: ClockFace
+var time = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in pick_n_random_values(items, levelNumber*2):
 		$ItemList.add_item(i)
+	
+#func _physics_process(delta: float) -> void:
+	#time += delta
+	#clock = ClockFace.new()
+	#clock.hand_rotation(time)
 
 func pick_n_random_values(array: Array, n: int) -> Array:
 	var array_copy: Array = array.duplicate()

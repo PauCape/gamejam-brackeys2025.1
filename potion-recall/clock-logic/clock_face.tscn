@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfuie3s4to1vq"]
+
+[ext_resource type="Script" path="res://clock-logic/clock_face.gd" id="1_i61hb"]
+
+[sub_resource type="Gradient" id="Gradient_l84gq"]
+
+[sub_resource type="CurveTexture" id="CurveTexture_2qixb"]
+
+[node name="ClockFace" type="Node2D"]
+script = ExtResource("1_i61hb")
+
+[node name="Hand" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, -100)
+closed = true
+width = 13.135
+default_color = Color(0.1826, 0.122008, 0.151972, 1)
+gradient = SubResource("Gradient_l84gq")
+texture = SubResource("CurveTexture_2qixb")
+round_precision = 13

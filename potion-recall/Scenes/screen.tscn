@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://dahg20tscyjle"]
+
+[ext_resource type="Texture2D" uid="uid://048hjhfr4mvv" path="res://icon.svg" id="1_7di0j"]
+[ext_resource type="PackedScene" uid="uid://btrvcol50r6cv" path="res://Scenes/random_list.tscn" id="2_4g3a4"]
+[ext_resource type="PackedScene" uid="uid://cqurrdx6khqkc" path="res://clock-logic/hud.tscn" id="3_ikoh8"]
+[ext_resource type="Texture2D" uid="uid://dcqqbhhgrfto6" path="res://clock-logic/pixil-frame-0.png" id="3_myu6c"]
+[ext_resource type="PackedScene" uid="uid://og1p5x8mv0mp" path="res://clock-logic/digital_clock.tscn" id="4_vvw2d"]
+[ext_resource type="PackedScene" uid="uid://dfuie3s4to1vq" path="res://clock-logic/clock_face.tscn" id="4_xlb6f"]
+[ext_resource type="PackedScene" uid="uid://or3f4o30gqij" path="res://time-bar/game_time.tscn" id="7_3y30u"]
+
+[node name="Screen" type="Node2D"]
+
+[node name="StartGameButton" type="Button" parent="."]
+offset_left = 373.0
+offset_top = 222.0
+offset_right = 509.0
+offset_bottom = 358.0
+text = "PRESS ME TO
+RESET GAME"
+icon = ExtResource("1_7di0j")
+
+[node name="Control" parent="." instance=ExtResource("2_4g3a4")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="IncrementLevelButton" type="Button" parent="."]
+offset_left = 469.0
+offset_top = 393.0
+offset_right = 515.0
+offset_bottom = 439.0
+text = "+ Lvl"
+
+[node name="DigitalClock" parent="." instance=ExtResource("4_vvw2d")]
+
+[node name="Clock" type="Sprite2D" parent="."]
+position = Vector2(498, 98)
+scale = Vector2(3.02, 3.02)
+texture = ExtResource("3_myu6c")
+
+[node name="ClockFace" parent="Clock" instance=ExtResource("4_xlb6f")]
+scale = Vector2(0.275, 0.275)
+
+[node name="HUD" parent="." instance=ExtResource("3_ikoh8")]
+offset_left = 588.0
+offset_top = 69.0
+offset_right = 692.0
+offset_bottom = 134.0
+
+[node name="GameTime" parent="." instance=ExtResource("7_3y30u")]
+
+[connection signal="pressed" from="StartGameButton" to="Control" method="_on_button_pressed"]
+[connection signal="pressed" from="StartGameButton" to="DigitalClock" method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="StartGameButton" to="Clock/ClockFace" method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="StartGameButton" to="GameTime" method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="IncrementLevelButton" to="Control" method="_on_increment_level_button_pressed"]
