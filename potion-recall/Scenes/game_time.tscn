@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://or3f4o30gqij"]
 
-[ext_resource type="Script" path="res://Time Bar/game_time.gd" id="1_tqbbm"]
+[ext_resource type="Script" path="res://Scripts/game_time.gd" id="1_7vix6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q0isd"]
 font_size = 40
 
 [node name="GameTime" type="Node"]
-script = ExtResource("1_tqbbm")
+script = ExtResource("1_7vix6")
 
 [node name="timeStatus" type="Label" parent="."]
 anchors_preset = 5
