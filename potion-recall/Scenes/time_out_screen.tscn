@@ -1,7 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://co4wbftifup6"]
+[gd_scene load_steps=7 format=3 uid="uid://co4wbftifup6"]
 
 [ext_resource type="Script" path="res://Scripts/time_out_screen.gd" id="1_d1uqq"]
 [ext_resource type="FontFile" uid="uid://dnlko8yo8bgk" path="res://Assets/LilitaOne-Regular.ttf" id="1_npr4l"]
+
+[sub_resource type="Animation" id="Animation_fy4vb"]
+resource_name = "show"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0333333, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_c5hnm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fbc2x"]
+_data = {
+"RESET": SubResource("Animation_c5hnm"),
+"show": SubResource("Animation_fy4vb")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56cpg"]
 bg_color = Color(0.16, 0.16, 0.16, 0.772549)
@@ -15,6 +52,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d1uqq")
 visible_ui = NodePath("Panel")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fbc2x")
+}
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

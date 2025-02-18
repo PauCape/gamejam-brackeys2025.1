@@ -8,3 +8,4 @@ func _ready() -> void:
 
 func time_out_screen():
 	self.show()
+	$AnimationPlayer.play("show")
