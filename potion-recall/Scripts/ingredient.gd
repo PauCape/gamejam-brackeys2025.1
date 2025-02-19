@@ -9,17 +9,21 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseButton:
+		
 		if event.is_pressed() && mouseInIngredient && !released:
+			
 			dragging = true
-			linear_velocity = Vector2.ZERO
 			gravity_scale = 0
+			linear_velocity = Vector2.ZERO
 			set_freeze_mode(RigidBody2D.FREEZE_MODE_KINEMATIC)
+			
 		if event.is_released() && dragging:
+			
 			dragging = false
-			position = global_position
-			gravity_scale = 1
 			released = true
 			mouseInIngredient = false
+			gravity_scale = 1
+			position = global_position
 
 func _physics_process(delta):
 	if dragging && !released:
