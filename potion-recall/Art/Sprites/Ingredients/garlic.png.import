@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://be7pdise2hffd"
-path="res://.godot/imported/garlic.png-b2b548b247ad1da44d240e1691b8b36c.ctex"
+path="res://.godot/imported/garlic.png-a64493a75e7a0a44f2eeac5bbcb59fa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprites/Ingredients/garlic.png"
-dest_files=["res://.godot/imported/garlic.png-b2b548b247ad1da44d240e1691b8b36c.ctex"]
+source_file="res://Art/Sprites/ingredients/garlic.png"
+dest_files=["res://.godot/imported/garlic.png-a64493a75e7a0a44f2eeac5bbcb59fa0.ctex"]
 
 [params]
 

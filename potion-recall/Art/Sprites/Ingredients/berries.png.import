@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpnlv26od0hoc"
-path="res://.godot/imported/berries.png-156f74966030edd81a893b34e1e514b6.ctex"
+path="res://.godot/imported/berries.png-9be66f02a2b8e5fb34f5ee5dc53fa795.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprites/Ingredients/berries.png"
-dest_files=["res://.godot/imported/berries.png-156f74966030edd81a893b34e1e514b6.ctex"]
+source_file="res://Art/Sprites/ingredients/berries.png"
+dest_files=["res://.godot/imported/berries.png-9be66f02a2b8e5fb34f5ee5dc53fa795.ctex"]
 
 [params]
 
