@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbdifrcp3rsa0"
-path="res://.godot/imported/Wall Background.png-0ead2a53013ea65b916f87e1c55bff85.ctex"
+uid="uid://b4f0ifr5rmrw0"
+path="res://.godot/imported/flower.png-6bd17b26c73ab27d64cea4830404f095.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprites/Wall Background.png"
-dest_files=["res://.godot/imported/Wall Background.png-0ead2a53013ea65b916f87e1c55bff85.ctex"]
+source_file="res://Art/Sprites/ingredients/flower.png"
+dest_files=["res://.godot/imported/flower.png-6bd17b26c73ab27d64cea4830404f095.ctex"]
 
 [params]
 

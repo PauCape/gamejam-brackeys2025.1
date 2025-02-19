@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvf8whfify0yg"]
+
+[ext_resource type="Texture2D" uid="uid://cfcrdhsl1qpfa" path="res://Art/Sprites/pot.png" id="2_d5if2"]
+
+[node name="Scene" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+
+[node name="Pot" type="Sprite2D" parent="."]
+position = Vector2(0, 12)
+scale = Vector2(0.833333, 0.833333)
+texture = ExtResource("2_d5if2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+zoom = Vector2(4, 4)

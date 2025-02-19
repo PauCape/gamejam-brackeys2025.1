@@ -1,23 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bp78ugm8iq4km"]
+[gd_scene load_steps=5 format=3 uid="uid://bp78ugm8iq4km"]
 
-[ext_resource type="PackedScene" uid="uid://w5pti3nx02m" path="res://Scenes/ingredient.tscn" id="1_adqci"]
-[ext_resource type="PackedScene" uid="uid://caqvkl642ri1d" path="res://Scenes/drop_area.tscn" id="2_6eahj"]
+[ext_resource type="PackedScene" uid="uid://bxohhnqys2elj" path="res://Scenes/Ingredients/ingredient_berries.tscn" id="1_53dn0"]
+[ext_resource type="PackedScene" uid="uid://bj170frgq8015" path="res://Scenes/Ingredients/ingredient_butterfly.tscn" id="1_o7a2l"]
+[ext_resource type="PackedScene" uid="uid://coxh2pn7ix5qu" path="res://Scenes/Ingredients/ingredient_egg.tscn" id="3_a1iqt"]
+[ext_resource type="PackedScene" uid="uid://cpeksuqatdcxh" path="res://Scenes/Ingredients/ingredient_flower.tscn" id="4_ff5kl"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 
-[node name="RigidBody2D" parent="." instance=ExtResource("1_adqci")]
-position = Vector2(94, 94)
+[node name="RigidBody2D" parent="." instance=ExtResource("1_53dn0")]
+position = Vector2(281, 111)
 
-[node name="RigidBody2D2" parent="." instance=ExtResource("1_adqci")]
-position = Vector2(255, 90)
+[node name="RigidBody2D2" parent="." instance=ExtResource("1_o7a2l")]
+position = Vector2(534, 173)
 
-[node name="RigidBody2D3" parent="." instance=ExtResource("1_adqci")]
-position = Vector2(428, 106)
+[node name="RigidBody2D3" parent="." instance=ExtResource("3_a1iqt")]
+position = Vector2(141, 307)
 
-[node name="RigidBody2D4" parent="." instance=ExtResource("1_adqci")]
-position = Vector2(616, 94)
-
-[node name="Area2D" parent="." instance=ExtResource("2_6eahj")]
-position = Vector2(599, 447)
-
-[connection signal="body_entered" from="Area2D" to="RigidBody2D" method="_on_area_2d_body_entered"]
+[node name="RigidBody2D4" parent="." instance=ExtResource("4_ff5kl")]
+position = Vector2(394, 349)

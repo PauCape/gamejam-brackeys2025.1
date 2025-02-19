@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpeksuqatdcxh"]
+
+[ext_resource type="Script" path="res://Scripts/ingredient.gd" id="1_oaixj"]
+[ext_resource type="Texture2D" uid="uid://b4f0ifr5rmrw0" path="res://Art/Sprites/Ingredients/flower.png" id="2_fr1vk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vki85"]
+size = Vector2(128, 128)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+input_pickable = true
+script = ExtResource("1_oaixj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_fr1vk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vki85")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
