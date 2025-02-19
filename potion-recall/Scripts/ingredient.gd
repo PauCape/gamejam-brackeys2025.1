@@ -2,13 +2,14 @@ extends RigidBody2D
 
 var mouseInIngredient = false
 var dragging = false
+var released = false
 
 func _ready():
 	gravity_scale = 0
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.is_pressed() && mouseInIngredient:
+		if event.is_pressed() && mouseInIngredient && !released:
 			dragging = true
 			linear_velocity = Vector2.ZERO
 			gravity_scale = 0
@@ -17,11 +18,11 @@ func _input(event):
 			dragging = false
 			position = global_position
 			gravity_scale = 1
+			released = true
 			mouseInIngredient = false
 
 func _physics_process(delta):
-	print(mouseInIngredient)
-	if dragging:
+	if dragging && !released:
 		position = get_global_mouse_position()
 
 func _on_mouse_entered() -> void:
