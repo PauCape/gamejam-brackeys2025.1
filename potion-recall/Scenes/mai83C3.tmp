@@ -65,13 +65,6 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [connection signal="ingredientInPot" from="Berries" to="RandomList" method="_on_berries_ingredient_in_pot"]
-[connection signal="ingredientInPot" from="Butterfly" to="RandomList" method="_on_butterfly_ingredient_in_pot"]
-[connection signal="ingredientInPot" from="Egg" to="RandomList" method="_on_egg_ingredient_in_pot"]
-[connection signal="ingredientInPot" from="Flower" to="RandomList" method="_on_flower_ingredient_in_pot"]
-[connection signal="ingredientInPot" from="Garlic" to="RandomList" method="_on_garlic_ingredient_in_pot"]
-[connection signal="ingredientInPot" from="Herb" to="RandomList" method="_on_herb_ingredient_in_pot"]
-[connection signal="ingredientInPot" from="Honeycomb" to="RandomList" method="_on_honeycomb_ingredient_in_pot"]
-[connection signal="ingredientInPot" from="Mushroom" to="RandomList" method="_on_mushroom_ingredient_in_pot"]
 [connection signal="body_entered" from="Drop Area" to="Berries" method="_on_drop_area_body_entered"]
 [connection signal="body_entered" from="Drop Area" to="Butterfly" method="_on_drop_area_body_entered"]
 [connection signal="body_entered" from="Drop Area" to="Egg" method="_on_drop_area_body_entered"]

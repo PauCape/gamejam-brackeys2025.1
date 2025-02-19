@@ -4,6 +4,8 @@ var mouseInIngredient = false
 var dragging = false
 var released = false
 
+signal ingredientInPot
+
 func _ready():
 	gravity_scale = 0
 
@@ -36,4 +38,5 @@ func _on_mouse_exited() -> void:
 	mouseInIngredient = false
 
 func _on_drop_area_body_entered(body: Node2D) -> void:
+	body.emit_signal("ingredientInPot")
 	body.queue_free()
