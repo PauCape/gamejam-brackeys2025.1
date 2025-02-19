@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfcrdhsl1qpfa"
-path="res://.godot/imported/pot.png-8525254d4a8d6c671b25f10e8e08fe2f.ctex"
+uid="uid://cpnlv26od0hoc"
+path="res://.godot/imported/berries.png-156f74966030edd81a893b34e1e514b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprites/pot.png"
-dest_files=["res://.godot/imported/pot.png-8525254d4a8d6c671b25f10e8e08fe2f.ctex"]
+source_file="res://Art/Sprites/Ingredients/berries.png"
+dest_files=["res://.godot/imported/berries.png-156f74966030edd81a893b34e1e514b6.ctex"]
 
 [params]
 

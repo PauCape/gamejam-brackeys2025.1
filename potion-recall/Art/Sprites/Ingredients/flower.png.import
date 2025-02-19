@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfcrdhsl1qpfa"
-path="res://.godot/imported/pot.png-8525254d4a8d6c671b25f10e8e08fe2f.ctex"
+uid="uid://b4f0ifr5rmrw0"
+path="res://.godot/imported/flower.png-a82f403bd1c5597b72ade19777e538bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprites/pot.png"
-dest_files=["res://.godot/imported/pot.png-8525254d4a8d6c671b25f10e8e08fe2f.ctex"]
+source_file="res://Art/Sprites/Ingredients/flower.png"
+dest_files=["res://.godot/imported/flower.png-a82f403bd1c5597b72ade19777e538bf.ctex"]
 
 [params]
 
