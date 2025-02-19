@@ -25,7 +25,7 @@ func _input(event):
 			gravity_scale = 1
 			position = global_position
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	if dragging && !released:
 		position = get_global_mouse_position()
 
@@ -35,5 +35,5 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	mouseInIngredient = false
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_drop_area_body_entered(body: Node2D) -> void:
 	body.queue_free()
