@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bp78ugm8iq4km"]
+[gd_scene load_steps=5 format=3 uid="uid://bp78ugm8iq4km"]
 
 [ext_resource type="PackedScene" uid="uid://w5pti3nx02m" path="res://Scenes/ingredient.tscn" id="1_adqci"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_j20jm"]
 [ext_resource type="PackedScene" uid="uid://caqvkl642ri1d" path="res://Scenes/drop_area.tscn" id="2_6eahj"]
+[ext_resource type="PackedScene" uid="uid://cp7e0f42le6av" path="res://Scenes/fade_transition.tscn" id="4_76qbv"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
+script = ExtResource("1_j20jm")
 
 [node name="RigidBody2D" parent="." instance=ExtResource("1_adqci")]
 position = Vector2(94, 94)
@@ -19,5 +22,7 @@ position = Vector2(616, 94)
 
 [node name="Area2D" parent="." instance=ExtResource("2_6eahj")]
 position = Vector2(599, 447)
+
+[node name="FadeTransition" parent="." instance=ExtResource("4_76qbv")]
 
 [connection signal="body_entered" from="Area2D" to="RigidBody2D" method="_on_area_2d_body_entered"]

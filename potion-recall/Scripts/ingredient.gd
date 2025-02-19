@@ -20,7 +20,6 @@ func _input(event):
 			mouseInIngredient = false
 
 func _physics_process(delta):
-	print(mouseInIngredient)
 	if dragging:
 		position = get_global_mouse_position()
 

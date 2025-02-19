@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://chp3gwm8vu3k2"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_0xdhl"]
+[ext_resource type="FontFile" uid="uid://1chvoa3e3luu" path="res://Fonts/LilitaOne-Regular.ttf" id="1_q8x7h"]
+[ext_resource type="PackedScene" uid="uid://cp7e0f42le6av" path="res://Scenes/fade_transition.tscn" id="3_f8tfd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn6ws"]
+bg_color = Color(0, 0, 0, 0.501961)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.33, 0.33, 0.33, 1)
+border_blend = true
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_0xdhl")
+
+[node name="ButtonManager" type="VBoxContainer" parent="."]
+offset_left = 505.0
+offset_top = 225.0
+offset_right = 593.0
+offset_bottom = 311.0
+
+[node name="StartButton" type="Button" parent="ButtonManager"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_q8x7h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kn6ws")
+text = "START"
+
+[node name="ExitButton" type="Button" parent="ButtonManager"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_q8x7h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kn6ws")
+text = "EXIT"
+
+[node name="FadeTransition" parent="." instance=ExtResource("3_f8tfd")]
+visible = false
+
+[node name="FadeTimer" type="Timer" parent="FadeTransition"]
+
+[connection signal="pressed" from="ButtonManager/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ButtonManager/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="timeout" from="FadeTransition/FadeTimer" to="." method="_on_fade_timer_timeout"]
