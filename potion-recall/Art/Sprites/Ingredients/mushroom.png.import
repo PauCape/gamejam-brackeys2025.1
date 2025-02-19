@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://x4bwmindb104"
-path="res://.godot/imported/mushroom.png-4fc61e6dc33c5d7571281ca37f4eb5a0.ctex"
+path="res://.godot/imported/mushroom.png-585e3a3f9609686832caa19c0706d2ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprites/ingredients/mushroom.png"
-dest_files=["res://.godot/imported/mushroom.png-4fc61e6dc33c5d7571281ca37f4eb5a0.ctex"]
+source_file="res://Art/Sprites/Ingredients/mushroom.png"
+dest_files=["res://.godot/imported/mushroom.png-585e3a3f9609686832caa19c0706d2ac.ctex"]
 
 [params]
 
