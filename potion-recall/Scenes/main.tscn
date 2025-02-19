@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp78ugm8iq4km"]
+
+[ext_resource type="PackedScene" uid="uid://w5pti3nx02m" path="res://Scenes/ingredient.tscn" id="1_adqci"]
+[ext_resource type="PackedScene" uid="uid://caqvkl642ri1d" path="res://Scenes/drop_area.tscn" id="2_6eahj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RigidBody2D" parent="." instance=ExtResource("1_adqci")]
+position = Vector2(94, 94)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("1_adqci")]
+position = Vector2(255, 90)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("1_adqci")]
+position = Vector2(428, 106)
+
+[node name="RigidBody2D4" parent="." instance=ExtResource("1_adqci")]
+position = Vector2(616, 94)
+
+[node name="Area2D" parent="." instance=ExtResource("2_6eahj")]
+position = Vector2(599, 447)
+
+[connection signal="body_entered" from="Area2D" to="RigidBody2D" method="_on_area_2d_body_entered"]
