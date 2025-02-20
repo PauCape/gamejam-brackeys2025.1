@@ -4,8 +4,6 @@ var mouseInIngredient = false
 var dragging = false
 var released = false
 
-@onready var berries: RigidBody2D = $"."
-
 signal ingredientInPot
 
 func _ready():
@@ -39,12 +37,3 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	mouseInIngredient = false
-
-func _on_drop_area_body_entered(body: Node2D) -> void:
-	if body.name == berries.name:
-		body.emit_signal("ingredientInPot")
-		body.queue_free()
-		print("Me repito")
-	#ALERT se repite tantas veces como numero de rigid bodies hay en la escena
-	# se debe a uqe estan conectados todos a la misma señal
-	
