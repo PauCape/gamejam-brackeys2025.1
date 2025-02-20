@@ -50,81 +50,66 @@ func change_item_name(itemName: String) -> void:
 	if isFirstItem:
 		for i in range(0, levelDifficulty):
 			if $ItemList.get_item_text(i) == itemName:
-				$ItemList.set_item_text(i, " ")
+				$ItemList.set_item_disabled(i, true)
+				#$ItemList.set_item_text(i, " ")
 			else:
 				pass
 
-## funcion que checkea si se ha resulto toda la lista
-#func check_item_list_status() -> bool:
-	#var count = 0 # == posicion
-	#isLevelCompleted = false
-	#for i in range(0, levelDifficulty):
-		#if $ItemList.get_item_text(i) == " ": # se podra añadir que el timer siga activo
-			#count += 1
-			#### si entra, nivel completado
-			#if count == levelDifficulty:
-				#isLevelCompleted = true
-			#else:
-				#pass
-		#else: # se podra añadir si el timer acaba antes de resolver
-			#pass
-	#return isLevelCompleted
-	
 # funcion que checkea si se ha resulto toda la lista
+func check_item_list_status() -> bool:
+	var count = 0 # == posicion
+	isLevelCompleted = false
+	for i in range(0, levelDifficulty):
+		if $ItemList.get_item_text(i) == " ": # se podra añadir que el timer siga activo
+			count += 1
+			### si entra, nivel completado
+			if count == levelDifficulty:
+				isLevelCompleted = true
+			else:
+				pass
+		else: # se podra añadir si el timer acaba antes de resolver
+			pass
+	return isLevelCompleted
+	
+# funcion que comprueba si el item añadido es el primero de la lista
+#ALERT al completar el nivel se tiene que resetear la posicion
 func check_item_order(targetIngredient) -> bool:
 	var firstItemInList = $ItemList.get_item_text(itemIndex)
-	
+
 	if targetIngredient == firstItemInList:
 		isFirstItem = true
 		itemIndex += 1
 		print("first item")
 	return isFirstItem
 
+#NOTE funcion que engloba las funciones que usa cada ingrediente
+func ingredient_functions(ingredientname: String) -> void:
+	check_item_order(ingredientname)
+	change_item_name(ingredientname)
+	check_item_list_status()
+	increment_level_label(isLevelCompleted)
+
 #NOTE señales que emiten los ingredientes cuando entran el POT
 func _on_berries_ingredient_in_pot() -> void:
-	check_item_order("Berries")
-	change_item_name("Berries")
-	#check_item_list_status()
-	increment_level_label(isLevelCompleted)
+	ingredient_functions("Berries")
 
 func _on_butterfly_ingredient_in_pot() -> void:
-	check_item_order("Butterfly")
-	change_item_name("Butterfly")
-	#check_item_list_status()
-	increment_level_label(isLevelCompleted)
+	ingredient_functions("Butterfly")
 
 func _on_egg_ingredient_in_pot() -> void:
-	check_item_order("Egg")
-	change_item_name("Egg")
-	#check_item_list_status()
-	increment_level_label(isLevelCompleted)
+	ingredient_functions("Egg")
 
 func _on_flower_ingredient_in_pot() -> void:
-	check_item_order("Flower")
-	change_item_name("Flower")
-	#check_item_list_status()
-	increment_level_label(isLevelCompleted)
+	ingredient_functions("Flower")
 
 func _on_garlic_ingredient_in_pot() -> void:
-	check_item_order("Garlic")
-	change_item_name("Garlic")
-	#check_item_list_status()
-	increment_level_label(isLevelCompleted)
+	ingredient_functions("Garlic")
 
 func _on_herb_ingredient_in_pot() -> void:
-	check_item_order("Herb")
-	change_item_name("Herb")
-	#check_item_list_status()
-	increment_level_label(isLevelCompleted)
+	ingredient_functions("Herb")
 
 func _on_honeycomb_ingredient_in_pot() -> void:
-	check_item_order("Honeycomb")
-	change_item_name("Honeycomb")
-	#check_item_list_status()
-	increment_level_label(isLevelCompleted)
+	ingredient_functions("Honeycomb")
 
 func _on_mushroom_ingredient_in_pot() -> void:
-	check_item_order("Mushroom")
-	change_item_name("Mushroom")
-	#check_item_list_status()
-	increment_level_label(isLevelCompleted)
+	ingredient_functions("Mushroom")
