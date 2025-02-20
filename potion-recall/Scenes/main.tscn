@@ -1,18 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bp78ugm8iq4km"]
+[gd_scene load_steps=5 format=3 uid="uid://bp78ugm8iq4km"]
 
 [ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="1_3p53i"]
-[ext_resource type="PackedScene" uid="uid://bxohhnqys2elj" path="res://Scenes/Ingredients/ingredient_berries.tscn" id="1_53dn0"]
-[ext_resource type="PackedScene" uid="uid://bj170frgq8015" path="res://Scenes/Ingredients/ingredient_butterfly.tscn" id="1_o7a2l"]
-[ext_resource type="Texture2D" uid="uid://cfcrdhsl1qpfa" path="res://Art/Sprites/Pot.png" id="2_1qopo"]
-[ext_resource type="PackedScene" uid="uid://coxh2pn7ix5qu" path="res://Scenes/Ingredients/ingredient_egg.tscn" id="3_a1iqt"]
-[ext_resource type="PackedScene" uid="uid://cpeksuqatdcxh" path="res://Scenes/Ingredients/ingredient_flower.tscn" id="4_ff5kl"]
-[ext_resource type="PackedScene" uid="uid://b0in8683xkex0" path="res://Scenes/Ingredients/ingredient_garlic.tscn" id="7_a4teg"]
-[ext_resource type="PackedScene" uid="uid://bum2a10f0q2sy" path="res://Scenes/Ingredients/ingredient_herb.tscn" id="8_4ah48"]
+[ext_resource type="Texture2D" uid="uid://cfcrdhsl1qpfa" path="res://Art/Sprites/pot.png" id="2_1qopo"]
+[ext_resource type="PackedScene" uid="uid://cl68ie0s1kwqi" path="res://Scenes/Ingredients/ingredient_generator.tscn" id="4_poahg"]
 [ext_resource type="PackedScene" uid="uid://caqvkl642ri1d" path="res://Scenes/drop_area.tscn" id="9_4ctsn"]
-[ext_resource type="PackedScene" uid="uid://bkl5u0ft12cf4" path="res://Scenes/Ingredients/ingredient_honeycomb.tscn" id="9_ullni"]
-[ext_resource type="PackedScene" uid="uid://xv8kem2iy1ve" path="res://Scenes/Ingredients/ingredient_mushroom.tscn" id="10_05up7"]
-[ext_resource type="PackedScene" uid="uid://btrvcol50r6cv" path="res://Scenes/random_list.tscn" id="12_fo1gx"]
-[ext_resource type="PackedScene" uid="uid://br11571gojwf3" path="res://Scenes/win_screen.tscn" id="13_vmr48"]
 
 [node name="Main" type="Node2D"]
 
@@ -32,28 +23,35 @@ metadata/_edit_lock_ = true
 position = Vector2(640, 398)
 metadata/_edit_lock_ = true
 
-[node name="WinScreen" parent="." instance=ExtResource("13_vmr48")]
-offset_left = 640.0
-offset_top = 385.0
-offset_right = 640.0
-offset_bottom = 385.0
+[node name="Ingredient Generator" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(91, 90)
+ingredient = "berries"
 
-[node name="RandomList" parent="." instance=ExtResource("12_fo1gx")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 85.0
-offset_right = 85.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="Ingredient Generator2" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(225, 90)
 
-[connection signal="ingredientInPot" from="Berries" to="RandomList" method="_on_berries_ingredient_in_pot"]
-[connection signal="ingredientInPot" from="Butterfly" to="RandomList" method="_on_butterfly_ingredient_in_pot"]
-[connection signal="ingredientInPot" from="Egg" to="RandomList" method="_on_egg_ingredient_in_pot"]
-[connection signal="ingredientInPot" from="Flower" to="RandomList" method="_on_flower_ingredient_in_pot"]
-[connection signal="ingredientInPot" from="Garlic" to="RandomList" method="_on_garlic_ingredient_in_pot"]
-[connection signal="ingredientInPot" from="Herb" to="RandomList" method="_on_herb_ingredient_in_pot"]
-[connection signal="ingredientInPot" from="Honeycomb" to="RandomList" method="_on_honeycomb_ingredient_in_pot"]
-[connection signal="ingredientInPot" from="Mushroom" to="RandomList" method="_on_mushroom_ingredient_in_pot"]
+[node name="Ingredient Generator3" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(87, 244)
+ingredient = "flower"
+
+[node name="Ingredient Generator4" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(231, 242)
+ingredient = "butterfly"
+
+[node name="Ingredient Generator5" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(230, 375)
+ingredient = "garlic"
+
+[node name="Ingredient Generator6" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(90, 382)
+ingredient = "herb"
+
+[node name="Ingredient Generator7" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(84, 534)
+ingredient = "honeycomb"
+
+[node name="Ingredient Generator8" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(224, 542)
+ingredient = "mushroom"
+
 [connection signal="body_entered" from="Drop Area" to="Drop Area" method="_on_body_entered"]
-[connection signal="winningTime" from="RandomList" to="WinScreen" method="_on_random_list_winning_time"]

@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1801160bex6u"]
+[gd_scene load_steps=3 format=3 uid="uid://cl68ie0s1kwqi"]
 
-[ext_resource type="Texture2D" uid="uid://048hjhfr4mvv" path="res://icon.svg" id="1_2hb3h"]
-[ext_resource type="Script" path="res://Scripts/ingredient_shelf.gd" id="1_etx43"]
+[ext_resource type="Script" path="res://Scripts/ingredient_generator.gd" id="1_orpky"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a7erp"]
-size = Vector2(128, 128)
+size = Vector2(88, 92)
 
-[node name="Ingredient Shelf" type="Area2D"]
-script = ExtResource("1_etx43")
+[node name="Ingredient Generator" type="Area2D"]
+script = ExtResource("1_orpky")
+ingredient = "egg"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_2hb3h")
+scale = Vector2(4, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_a7erp")

@@ -90,7 +90,7 @@ func ingredient_functions(ingredientname: String) -> void:
 	increment_level_label(isLevelCompleted)
 
 #NOTE señales que emiten los ingredientes cuando entran el POT
-func _on_berries_ingredient_in_pot() -> void:
+func _on_berries_ingredient_in_pot(body: Node2D) -> void:
 	ingredient_functions("Berries")
 
 func _on_butterfly_ingredient_in_pot() -> void:

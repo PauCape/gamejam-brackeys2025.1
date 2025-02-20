@@ -10,6 +10,10 @@ func _ready() -> void:
 	freeze = true
 
 func _physics_process(delta) -> void:
+	
+	if position.y > 720:
+		self.queue_free()
+		
 	if dragging:
 		self.position = get_global_mouse_position()
 		
