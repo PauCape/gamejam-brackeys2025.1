@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp78ugm8iq4km"]
+[gd_scene load_steps=5 format=3 uid="uid://bp78ugm8iq4km"]
 
 [ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="1_3p53i"]
-[ext_resource type="Texture2D" uid="uid://cfcrdhsl1qpfa" path="res://Art/Sprites/Pot.png" id="2_1qopo"]
-[ext_resource type="PackedScene" uid="uid://ct3tg2ldjogkm" path="res://Scenes/Shelf Ingredients/shelf_egg.tscn" id="4_oumyt"]
-[ext_resource type="PackedScene" uid="uid://cl68ie0s1kwqi" path="res://Scenes/Shelf Ingredients/shelf_berries.tscn" id="4_sajxa"]
+[ext_resource type="Texture2D" uid="uid://cfcrdhsl1qpfa" path="res://Art/Sprites/pot.png" id="2_1qopo"]
+[ext_resource type="PackedScene" uid="uid://d1801160bex6u" path="res://Scenes/ingredient_shelf.tscn" id="4_jfact"]
 [ext_resource type="PackedScene" uid="uid://caqvkl642ri1d" path="res://Scenes/drop_area.tscn" id="9_4ctsn"]
 
 [node name="Main" type="Node2D"]
@@ -24,13 +23,15 @@ metadata/_edit_lock_ = true
 position = Vector2(640, 398)
 metadata/_edit_lock_ = true
 
-[node name="Shelf Egg" parent="." instance=ExtResource("4_oumyt")]
-position = Vector2(99, 170)
+[node name="Ingredient Shelf" parent="." instance=ExtResource("4_jfact")]
+position = Vector2(288, 337)
 
-[node name="Shelf Berries" parent="." instance=ExtResource("4_sajxa")]
-position = Vector2(127, 338)
+[node name="Ingredient Shelf2" parent="." instance=ExtResource("4_jfact")]
+position = Vector2(646, 147)
+ingredient = "egg"
 
-[node name="Shelf Egg2" parent="." instance=ExtResource("4_oumyt")]
-position = Vector2(251, 234)
+[node name="Ingredient Shelf3" parent="." instance=ExtResource("4_jfact")]
+position = Vector2(1039, 407)
+ingredient = "flower"
 
 [connection signal="body_entered" from="Drop Area" to="Drop Area" method="_on_body_entered"]
