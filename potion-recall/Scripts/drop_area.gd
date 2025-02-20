@@ -1,5 +1,7 @@
 extends Area2D
 
+signal ingredientInPot(body)
+
 func _on_body_entered(body: Node2D) -> void:
-	body.emit_signal("ingredientInPot")
+	ingredientInPot.emit(body)
 	body.queue_free()
