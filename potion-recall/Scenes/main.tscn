@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bp78ugm8iq4km"]
+[gd_scene load_steps=14 format=3 uid="uid://bp78ugm8iq4km"]
 
 [ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="1_3p53i"]
 [ext_resource type="PackedScene" uid="uid://bxohhnqys2elj" path="res://Scenes/Ingredients/ingredient_berries.tscn" id="1_53dn0"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bkl5u0ft12cf4" path="res://Scenes/Ingredients/ingredient_honeycomb.tscn" id="9_ullni"]
 [ext_resource type="PackedScene" uid="uid://xv8kem2iy1ve" path="res://Scenes/Ingredients/ingredient_mushroom.tscn" id="10_05up7"]
 [ext_resource type="PackedScene" uid="uid://btrvcol50r6cv" path="res://Scenes/random_list.tscn" id="12_fo1gx"]
+[ext_resource type="PackedScene" uid="uid://br11571gojwf3" path="res://Scenes/win_screen.tscn" id="13_vmr48"]
 
 [node name="Main" type="Node2D"]
 
@@ -55,6 +56,12 @@ position = Vector2(271, 594)
 position = Vector2(640, 398)
 metadata/_edit_lock_ = true
 
+[node name="WinScreen" parent="." instance=ExtResource("13_vmr48")]
+offset_left = 640.0
+offset_top = 385.0
+offset_right = 640.0
+offset_bottom = 385.0
+
 [node name="RandomList" parent="." instance=ExtResource("12_fo1gx")]
 anchors_preset = 0
 anchor_right = 0.0
@@ -80,3 +87,4 @@ grow_vertical = 1
 [connection signal="body_entered" from="Drop Area" to="Herb" method="_on_drop_area_body_entered"]
 [connection signal="body_entered" from="Drop Area" to="Honeycomb" method="_on_drop_area_body_entered"]
 [connection signal="body_entered" from="Drop Area" to="Mushroom" method="_on_drop_area_body_entered"]
+[connection signal="winningTime" from="RandomList" to="WinScreen" method="_on_random_list_winning_time"]

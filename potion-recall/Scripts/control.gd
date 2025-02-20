@@ -9,13 +9,20 @@ extends Control
 @onready var honeycomb: RigidBody2D = $"../Honeycomb"
 @onready var mushroom: RigidBody2D = $"../Mushroom"
 
-var levelNumber = 4
+@export var levelNumber = 1
+@export var difficulty = 2
+var levelDifficulty = levelNumber * difficulty # == numero de items activos en lista
+
+signal winningTime
 
 func _ready() -> void:
 	#ALERT: estaría bien var global para que no se inicialice el array en _ready
 	var items = [berries, butterfly, egg, flower, garlic, herb, honeycomb, mushroom]
-	for i in pick_n_random_values(items, levelNumber*2):
+	for i in pick_n_random_values(items, levelDifficulty):
 		$ItemList.add_item(i.name)
+
+func _process(delta: float) -> void:
+	check_item_list_status()
 
 func pick_n_random_values(array: Array, n: int) -> Array:
 	var array_copy: Array = array.duplicate()
@@ -38,12 +45,23 @@ func _on_increment_level_button_pressed() -> void:
 
 # funcion que quitará el nombre del ingrediente metido en el POT
 func change_item_name(itemName: String) -> void:
-	for i in range(0, levelNumber * 2):
+	for i in range(0, levelDifficulty):
 		if $ItemList.get_item_text(i) == itemName:
 			$ItemList.set_item_text(i, " ")
 		else:
-			print("not " + itemName + " found")
+			pass
 
+# funcion que checkea si se ha resulto toda la lista
+func check_item_list_status() -> void:
+	var count = 0
+	for i in range(0, levelDifficulty):
+		if $ItemList.get_item_text(i) == " ": # se podra añadir que el timer siga activo
+			count += 1
+			if count == levelDifficulty:
+				print("You Win!")
+				emit_signal("winningTime")
+		else: # se podra añadir si el timer acaba antes de resolver
+			pass
 
 #NOTE señales que emiten los ingredientes cuando entran el POT
 func _on_berries_ingredient_in_pot() -> void:
