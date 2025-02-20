@@ -35,7 +35,7 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_7l888")
 theme_override_font_sizes/font_size = 46
 theme_override_styles/panel = SubResource("StyleBoxFlat_wfam7")
-allow_search = false
+auto_height = true
 
 [node name="LevelNameLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
