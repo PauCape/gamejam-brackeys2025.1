@@ -28,30 +28,6 @@ scale = Vector2(3, 3)
 texture = ExtResource("2_1qopo")
 metadata/_edit_lock_ = true
 
-[node name="Berries" parent="." instance=ExtResource("1_53dn0")]
-position = Vector2(85, 82)
-
-[node name="Butterfly" parent="." instance=ExtResource("1_o7a2l")]
-position = Vector2(271, 90)
-
-[node name="Egg" parent="." instance=ExtResource("3_a1iqt")]
-position = Vector2(100, 233)
-
-[node name="Flower" parent="." instance=ExtResource("4_ff5kl")]
-position = Vector2(262, 241)
-
-[node name="Garlic" parent="." instance=ExtResource("7_a4teg")]
-position = Vector2(80, 421)
-
-[node name="Herb" parent="." instance=ExtResource("8_4ah48")]
-position = Vector2(268, 408)
-
-[node name="Honeycomb" parent="." instance=ExtResource("9_ullni")]
-position = Vector2(87, 611)
-
-[node name="Mushroom" parent="." instance=ExtResource("10_05up7")]
-position = Vector2(271, 594)
-
 [node name="Drop Area" parent="." instance=ExtResource("9_4ctsn")]
 position = Vector2(640, 398)
 metadata/_edit_lock_ = true
