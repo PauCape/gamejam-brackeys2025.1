@@ -1,13 +1,19 @@
 extends Control
 
+@onready var textureProgressBar: TextureProgressBar = $TextureProgressBar
+@onready var timer: Timer = $Timer
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	show()
+var segundos = 0
 
-func set_value(value):
-	$TextureProgressBar.value = value
-	if value <= 100:
-		show()
-	else:
-		hide()
+signal clockStopped
+
+func _on_main_start_clock() -> void:
+	textureProgressBar.value = 100
+	timer.start()
+	
+func _on_timer_timeout() -> void:
+	segundos = segundos + 1
+	textureProgressBar.value = textureProgressBar.value - 25
+	if segundos == 4:
+		timer.stop()
+		clockStopped.emit()

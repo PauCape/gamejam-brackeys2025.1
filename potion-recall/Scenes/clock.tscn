@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5p1x6kesl7ss"]
+[gd_scene load_steps=5 format=3 uid="uid://c5p1x6kesl7ss"]
 
 [ext_resource type="Script" path="res://Scripts/time_bar.gd" id="1_r2rbn"]
 [ext_resource type="Texture2D" uid="uid://4lc6aaoohy6h" path="res://Art/Sprites/Clock/wall_clock.png" id="2_jf5wf"]
 [ext_resource type="Texture2D" uid="uid://74cgyouc8ycj" path="res://Art/Sprites/Clock/wall_clock_skin.png" id="3_p6bfd"]
 [ext_resource type="Texture2D" uid="uid://pdg20ppjgnyp" path="res://Art/Sprites/Clock/clockcenter.png" id="4_ojyj6"]
-[ext_resource type="FontFile" uid="uid://bk3kh80wcnr0f" path="res://Assets/LilitaOne-Regular.ttf" id="5_5860c"]
 
 [node name="Clock" type="Control"]
 layout_mode = 3
@@ -17,7 +16,7 @@ offset_left = -32.0
 offset_top = -74.0
 offset_right = 32.0
 offset_bottom = -24.0
-value = 78.0
+value = 100.0
 fill_mode = 5
 texture_under = ExtResource("2_jf5wf")
 texture_over = ExtResource("3_p6bfd")
@@ -27,12 +26,4 @@ tint_under = Color(1, 1, 1, 0.52549)
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="TimeStatus" type="Label" parent="."]
-layout_mode = 1
-offset_left = 19.0
-offset_top = -65.0
-offset_right = 56.0
-offset_bottom = -50.0
-theme_override_fonts/font = ExtResource("5_5860c")
-theme_override_font_sizes/font_size = 13
-text = "00:00"
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
