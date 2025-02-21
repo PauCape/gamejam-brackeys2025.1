@@ -2,8 +2,6 @@ extends RigidBody2D
 
 var dragging = true
 
-signal ingredientInPot
-
 func _ready() -> void:
 	gravity_scale = 0
 	linear_velocity = Vector2.ZERO

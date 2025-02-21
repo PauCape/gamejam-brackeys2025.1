@@ -5,6 +5,7 @@ signal badIngredient
 
 @onready var levelNumberLabel: RichTextLabel = $LevelNumberLabel
 @onready var itemList: ItemList = $ItemList
+@onready var player_pot: Node2D = $"../PlayerPot"
 
 @export var levelNumber = 1
 @export var difficulty = 2
@@ -15,7 +16,7 @@ var globalIndex = 0
 
 var items: Array = ["Berries", "Butterfly", "Egg", "Flower", "Garlic", "Herb", "Honeycomb", "Mushroom"]
 
-func _on_drop_area_ingredient_in_pot(body: Node2D) -> void:
+func _on_player_pot_ingredient_in_pot(body: Variant) -> void:
 	var redColor = Color(1, 0, 0, 1)
 	var greenColor = Color(0, 1, 0, 1)
 	
