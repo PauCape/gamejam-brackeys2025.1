@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf4t4kbtjfuf5"
-path="res://.godot/imported/herb.png-bc9bc96202498e7f345b7a5e4c2a5646.ctex"
+path="res://.godot/imported/herb.png-f44687a4f8e710ea2a424d63be3c603e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprites/ingredients/herb.png"
-dest_files=["res://.godot/imported/herb.png-bc9bc96202498e7f345b7a5e4c2a5646.ctex"]
+source_file="res://Art/Sprites/Ingredients/herb.png"
+dest_files=["res://.godot/imported/herb.png-f44687a4f8e710ea2a424d63be3c603e.ctex"]
 
 [params]
 

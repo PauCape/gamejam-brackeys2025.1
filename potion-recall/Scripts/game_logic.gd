@@ -10,13 +10,10 @@ var level = 1
 func _ready() -> void:
 	reloadList.emit(level)
 	
-	startClock.emit()
+	
 	await get_tree().create_timer(4).timeout
-	
-	hideList.emit()
-	
-	# Podemos en marcha el reloj ()
 	startClock.emit()
+	hideList.emit()
 
 func _on_random_list_completed_list() -> void:
 	
@@ -27,7 +24,7 @@ func _on_random_list_completed_list() -> void:
 	
 	reloadList.emit(level)
 	await get_tree().create_timer(4).timeout
-	
+	startClock.emit()
 	hideList.emit()
 
 func _on_random_list_bad_ingredient() -> void:

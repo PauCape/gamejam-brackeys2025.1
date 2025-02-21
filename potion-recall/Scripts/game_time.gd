@@ -32,6 +32,3 @@ func _on_timer_timeout() -> void:
 
 func _on_main_start_clock() -> void:
 	get_tree().paused = false
-
-func _on_main_game_lost() -> void:
-	$TimeOutScreen.time_out_screen()

@@ -9,7 +9,7 @@ func resume():
 
 func pause():
 	show()
-	get_tree().paused = true
+	get_parent().get_tree().paused = true
 	$AnimationPlayer.play("blur")
 	
 func esc():

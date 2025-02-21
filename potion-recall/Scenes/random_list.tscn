@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://btrvcol50r6cv"]
 
 [ext_resource type="Script" path="res://Scripts/random_list.gd" id="1_m2w3t"]
-[ext_resource type="Texture2D" uid="uid://dptgu2r3fp4hi" path="res://Art/Sprites/parchment.png" id="2_bsmi8"]
+[ext_resource type="Texture2D" uid="uid://dptgu2r3fp4hi" path="res://Art/Sprites/Parchment.png" id="2_bsmi8"]
 [ext_resource type="FontFile" uid="uid://btf7nr25m1u7x" path="res://Assets/PixelifySans-Bold.ttf" id="3_1stgg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lw8o4"]

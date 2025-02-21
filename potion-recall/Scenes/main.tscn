@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bp78ugm8iq4km"]
+[gd_scene load_steps=9 format=3 uid="uid://bp78ugm8iq4km"]
 
 [ext_resource type="Script" path="res://Scripts/game_logic.gd" id="1_02gdl"]
 [ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="1_3p53i"]
 [ext_resource type="PackedScene" uid="uid://cl68ie0s1kwqi" path="res://Scenes/Ingredients/ingredient_generator.tscn" id="4_poahg"]
 [ext_resource type="PackedScene" uid="uid://or3f4o30gqij" path="res://Scenes/game_time.tscn" id="6_00n75"]
 [ext_resource type="PackedScene" uid="uid://btrvcol50r6cv" path="res://Scenes/random_list.tscn" id="6_dh7k8"]
-[ext_resource type="PackedScene" uid="uid://bgh38oy0k12fs" path="res://Scenes/player_pot.tscn" id="6_tvlwm"]
+[ext_resource type="PackedScene" uid="uid://bgh38oy0k12fs" path="res://Scenes/Player_Pot.tscn" id="6_tvlwm"]
 [ext_resource type="PackedScene" uid="uid://co4wbftifup6" path="res://Scenes/time_out_screen.tscn" id="7_uu2a7"]
+[ext_resource type="PackedScene" uid="uid://dk4ltfciyiin4" path="res://Scenes/pause_menu.tscn" id="8_8my5c"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_02gdl")
@@ -64,12 +65,24 @@ zoom = Vector2(4, 4)
 [node name="GameTime" parent="." instance=ExtResource("6_00n75")]
 
 [node name="TimeOutScreen" parent="." instance=ExtResource("7_uu2a7")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[connection signal="gameLost" from="." to="GameTime" method="_on_main_game_lost"]
+[node name="PauseMenu" parent="." instance=ExtResource("8_8my5c")]
+
 [connection signal="hideList" from="." to="RandomList" method="_on_main_hide_list"]
 [connection signal="reloadList" from="." to="RandomList" method="_on_main_reload_list"]
+[connection signal="startClock" from="." to="GameTime" method="_on_main_start_clock"]
 [connection signal="badIngredient" from="RandomList" to="." method="_on_random_list_bad_ingredient"]
 [connection signal="completedList" from="RandomList" to="." method="_on_random_list_completed_list"]
 [connection signal="ingredientInPot" from="PlayerPot" to="RandomList" method="_on_player_pot_ingredient_in_pot"]
-[connection signal="startClock" from="." to="GameTime" method="_on_main_start_clock"]
 [connection signal="clockStopped" from="GameTime" to="." method="_on_game_time_clock_stopped"]
