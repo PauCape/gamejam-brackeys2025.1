@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qwe34hcckj5w"
-path="res://.godot/imported/progress-bar-frame.png-2b2853b0c428d2757f442214d8b45db8.ctex"
+uid="uid://74cgyouc8ycj"
+path="res://.godot/imported/wall_clock_skin.png-8cc4ac80b3eaf72d4727a32d796f579f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/progress-bar-frame.png"
-dest_files=["res://.godot/imported/progress-bar-frame.png-2b2853b0c428d2757f442214d8b45db8.ctex"]
+source_file="res://Art/Sprites/Clock/wall_clock_skin.png"
+dest_files=["res://.godot/imported/wall_clock_skin.png-8cc4ac80b3eaf72d4727a32d796f579f.ctex"]
 
 [params]
 

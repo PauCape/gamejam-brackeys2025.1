@@ -3,7 +3,7 @@ extends Control
 signal completedList
 signal badIngredient
 
-@onready var levelNumberLabel: RichTextLabel = $LevelNumberLabel
+#@onready var levelNumberLabel: RichTextLabel = $LevelNumberLabel
 @onready var itemList: ItemList = $ItemList
 
 @export var levelNumber = 1

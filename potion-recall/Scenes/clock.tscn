@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5p1x6kesl7ss"]
+
+[ext_resource type="Script" path="res://Scripts/time_bar.gd" id="1_r2rbn"]
+[ext_resource type="Texture2D" uid="uid://4lc6aaoohy6h" path="res://Art/Sprites/Clock/wall_clock.png" id="2_jf5wf"]
+[ext_resource type="Texture2D" uid="uid://74cgyouc8ycj" path="res://Art/Sprites/Clock/wall_clock_skin.png" id="3_p6bfd"]
+[ext_resource type="Texture2D" uid="uid://pdg20ppjgnyp" path="res://Art/Sprites/Clock/clockcenter.png" id="4_ojyj6"]
+[ext_resource type="FontFile" uid="uid://dnlko8yo8bgk" path="res://Assets/LilitaOne-Regular.ttf" id="5_5860c"]
+
+[node name="Clock" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_r2rbn")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -128.415
+offset_top = -63.555
+offset_right = -64.415
+offset_bottom = -13.555
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(4, 4)
+value = 78.0
+fill_mode = 5
+texture_under = ExtResource("2_jf5wf")
+texture_over = ExtResource("3_p6bfd")
+texture_progress = ExtResource("4_ojyj6")
+texture_progress_offset = Vector2(17.015, 1.03)
+tint_under = Color(1, 1, 1, 0.52549)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TimeStatus" type="Label" parent="."]
+layout_mode = 0
+offset_left = 165.0
+offset_right = 206.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("5_5860c")
+theme_override_font_sizes/font_size = 38
+text = "00:00"
