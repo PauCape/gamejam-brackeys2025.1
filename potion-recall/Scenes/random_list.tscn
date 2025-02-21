@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://btrvcol50r6cv"]
+[gd_scene load_steps=5 format=3 uid="uid://btrvcol50r6cv"]
 
 [ext_resource type="Script" path="res://Scripts/random_list.gd" id="1_m2w3t"]
-[ext_resource type="FontFile" uid="uid://cjlkjq5rse0vx" path="res://Fonts/PixelifySans-Bold.ttf" id="2_7l888"]
+[ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="2_cipns"]
+[ext_resource type="FontFile" uid="uid://btf7nr25m1u7x" path="res://Assets/PixelifySans-Bold.ttf" id="3_1stgg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lw8o4"]
 
 [node name="RandomList" type="Control"]
 layout_mode = 3
@@ -12,15 +15,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m2w3t")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cipns")
+
 [node name="ItemList" type="ItemList" parent="."]
-layout_mode = 1
-offset_left = 855.0
-offset_top = 186.0
-offset_right = 1173.0
-offset_bottom = 560.0
+layout_mode = 0
+offset_left = 64.0
+offset_top = -64.0
+offset_right = 144.0
+offset_bottom = 56.0
 mouse_filter = 2
 mouse_default_cursor_shape = 7
-theme_override_fonts/font = ExtResource("2_7l888")
-theme_override_font_sizes/font_size = 46
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_1stgg")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lw8o4")
 allow_search = false
 auto_height = true

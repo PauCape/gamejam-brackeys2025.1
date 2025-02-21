@@ -11,56 +11,53 @@
 script = ExtResource("1_02gdl")
 
 [node name="WallBackground" type="Sprite2D" parent="."]
-position = Vector2(640, 360)
-scale = Vector2(4, 4)
 texture = ExtResource("1_3p53i")
 metadata/_edit_lock_ = true
 
-[node name="Parchment" type="Sprite2D" parent="."]
-position = Vector2(1046, 352)
-scale = Vector2(3.79339, 3.69536)
-texture = ExtResource("3_qvk7l")
+[node name="RandomList" parent="." instance=ExtResource("6_dh7k8")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="PlayerPot" parent="." instance=ExtResource("6_tvlwm")]
-position = Vector2(641, 509)
-scale = Vector2(3, 3)
+position = Vector2(0, 34)
+scale = Vector2(0.78, 0.78)
 
 [node name="Ingredient Generator" parent="." instance=ExtResource("4_poahg")]
-position = Vector2(91, 90)
+position = Vector2(-128, -64)
 ingredient = "berries"
 
 [node name="Ingredient Generator2" parent="." instance=ExtResource("4_poahg")]
-position = Vector2(225, 90)
+position = Vector2(-88, -64)
 
 [node name="Ingredient Generator3" parent="." instance=ExtResource("4_poahg")]
-position = Vector2(87, 244)
+position = Vector2(-128, -24)
 ingredient = "flower"
 
 [node name="Ingredient Generator4" parent="." instance=ExtResource("4_poahg")]
-position = Vector2(231, 242)
+position = Vector2(-88, -24)
 ingredient = "butterfly"
 
 [node name="Ingredient Generator5" parent="." instance=ExtResource("4_poahg")]
-position = Vector2(230, 375)
+position = Vector2(-88, 16)
 ingredient = "garlic"
 
 [node name="Ingredient Generator6" parent="." instance=ExtResource("4_poahg")]
-position = Vector2(90, 382)
+position = Vector2(-128, 16)
 ingredient = "herb"
 
 [node name="Ingredient Generator7" parent="." instance=ExtResource("4_poahg")]
-position = Vector2(84, 534)
+position = Vector2(-128, 56)
 ingredient = "honeycomb"
 
 [node name="Ingredient Generator8" parent="." instance=ExtResource("4_poahg")]
-position = Vector2(224, 542)
+position = Vector2(-88, 56)
 ingredient = "mushroom"
 
-[node name="RandomList" parent="." instance=ExtResource("6_dh7k8")]
-offset_left = 46.0
-offset_top = -2.0
-offset_right = 46.0
-offset_bottom = -2.0
+[node name="MainCamera" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
 
 [connection signal="hideList" from="." to="RandomList" method="_on_main_hide_list"]
 [connection signal="reloadList" from="." to="RandomList" method="_on_main_reload_list"]
