@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="1_3p53i"]
 [ext_resource type="PackedScene" uid="uid://cl68ie0s1kwqi" path="res://Scenes/Ingredients/ingredient_generator.tscn" id="4_poahg"]
 [ext_resource type="PackedScene" uid="uid://btrvcol50r6cv" path="res://Scenes/random_list.tscn" id="6_dh7k8"]
-[ext_resource type="PackedScene" uid="uid://bgh38oy0k12fs" path="res://Scenes/Player_Pot.tscn" id="6_tvlwm"]
+[ext_resource type="PackedScene" uid="uid://bgh38oy0k12fs" path="res://Scenes/player_pot.tscn" id="6_tvlwm"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_02gdl")
@@ -61,4 +61,6 @@ zoom = Vector2(4, 4)
 
 [connection signal="hideList" from="." to="RandomList" method="_on_main_hide_list"]
 [connection signal="reloadList" from="." to="RandomList" method="_on_main_reload_list"]
+[connection signal="badIngredient" from="RandomList" to="." method="_on_random_list_bad_ingredient"]
+[connection signal="completedList" from="RandomList" to="." method="_on_random_list_completed_list"]
 [connection signal="ingredientInPot" from="PlayerPot" to="RandomList" method="_on_player_pot_ingredient_in_pot"]
