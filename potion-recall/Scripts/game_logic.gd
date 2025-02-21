@@ -2,7 +2,7 @@ extends Node
 
 signal reloadList(levelNumber)
 signal hideList
-signal startClock(seconds)
+signal startClock()
 
 var finalLevel = 4
 var level = 1
@@ -10,7 +10,7 @@ var level = 1
 func _ready() -> void:
 	reloadList.emit(level)
 	
-	startClock.emit(5)
+	startClock.emit()
 	await get_tree().create_timer(4).timeout
 	
 	hideList.emit()
