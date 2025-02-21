@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgh38oy0k12fs"]
+[gd_scene load_steps=8 format=3 uid="uid://bgh38oy0k12fs"]
 
 [ext_resource type="Texture2D" uid="uid://cfcrdhsl1qpfa" path="res://Art/Sprites/Pot.png" id="1_l54v7"]
+[ext_resource type="Script" path="res://Scripts/animation_player.gd" id="2_d4lkr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u4nhh"]
 radius = 8.0
@@ -112,3 +113,4 @@ shape = SubResource("CapsuleShape2D_u4nhh")
 libraries = {
 "": SubResource("AnimationLibrary_4nlp4")
 }
+script = ExtResource("2_d4lkr")
