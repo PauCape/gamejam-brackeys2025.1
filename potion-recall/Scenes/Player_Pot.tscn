@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bgh38oy0k12fs"]
 
-[ext_resource type="Texture2D" uid="uid://cfcrdhsl1qpfa" path="res://Art/Sprites/Pot.png" id="1_l54v7"]
+[ext_resource type="Texture2D" uid="uid://cfcrdhsl1qpfa" path="res://Art/Sprites/pot.png" id="1_l54v7"]
 [ext_resource type="Script" path="res://Scripts/player_pot.gd" id="1_q7njd"]
 [ext_resource type="Script" path="res://Scripts/animation_player.gd" id="2_d4lkr"]
 [ext_resource type="Script" path="res://Scripts/drop_area.gd" id="3_f4c1x"]
