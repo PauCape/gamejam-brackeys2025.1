@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://or3f4o30gqij"]
+[gd_scene load_steps=4 format=3 uid="uid://or3f4o30gqij"]
 
 [ext_resource type="Script" path="res://Scripts/game_time.gd" id="1_7vix6"]
 [ext_resource type="PackedScene" uid="uid://c5p1x6kesl7ss" path="res://Scenes/clock.tscn" id="2_vp0xp"]
+[ext_resource type="PackedScene" uid="uid://co4wbftifup6" path="res://Scenes/time_out_screen.tscn" id="5_wcwhr"]
 
 [node name="GameTime" type="Node"]
 script = ExtResource("1_7vix6")
@@ -17,5 +18,8 @@ offset_top = 110.0
 offset_right = -1.0
 offset_bottom = 110.0
 grow_horizontal = 2
+
+[node name="TimeOutScreen" parent="." instance=ExtResource("5_wcwhr")]
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

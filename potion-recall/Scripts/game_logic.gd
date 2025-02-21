@@ -33,4 +33,8 @@ func _on_random_list_completed_list() -> void:
 func _on_random_list_bad_ingredient() -> void:
 	pass # Replace with function body.
 # Recibimos la condicion de que ha perdido
-# Enviar la señal de que hemos perdido
+
+# señal de que el tiempo se ha acabado
+func _on_game_time_clock_stopped() -> void:
+	$TimeOutScreen.time_out_screen()
+	print("has perdido")
