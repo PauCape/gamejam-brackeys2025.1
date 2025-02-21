@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bp78ugm8iq4km"]
+[gd_scene load_steps=10 format=3 uid="uid://bp78ugm8iq4km"]
 
 [ext_resource type="Script" path="res://Scripts/game_logic.gd" id="1_02gdl"]
 [ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="1_3p53i"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://co4wbftifup6" path="res://Scenes/time_out_screen.tscn" id="7_uu2a7"]
 [ext_resource type="PackedScene" uid="uid://dk4ltfciyiin4" path="res://Scenes/pause_menu.tscn" id="8_8my5c"]
 [ext_resource type="PackedScene" uid="uid://c5p1x6kesl7ss" path="res://Scenes/clock.tscn" id="8_pia18"]
+[ext_resource type="PackedScene" uid="uid://br11571gojwf3" path="res://Scenes/win_screen.tscn" id="9_5suci"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_02gdl")
@@ -63,11 +64,10 @@ ingredient = "mushroom"
 zoom = Vector2(4, 4)
 
 [node name="Clock" parent="." instance=ExtResource("8_pia18")]
-offset_top = -15.0
-offset_bottom = -15.0
+offset_top = -8.0
+offset_bottom = -8.0
 
 [node name="TimeOutScreen" parent="." instance=ExtResource("7_uu2a7")]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -83,9 +83,15 @@ grow_vertical = 2
 [node name="PauseMenu" parent="." instance=ExtResource("8_8my5c")]
 visible = false
 
+[node name="WinScreen" parent="." instance=ExtResource("9_5suci")]
+offset_top = 56.0
+offset_bottom = 56.0
+
 [connection signal="hideList" from="." to="RandomList" method="_on_main_hide_list"]
 [connection signal="reloadList" from="." to="RandomList" method="_on_main_reload_list"]
+[connection signal="resetClock" from="." to="Clock" method="_on_main_reset_clock"]
 [connection signal="startClock" from="." to="Clock" method="_on_main_start_clock"]
+[connection signal="win" from="." to="WinScreen" method="_on_main_win"]
 [connection signal="badIngredient" from="RandomList" to="." method="_on_random_list_bad_ingredient"]
 [connection signal="completedList" from="RandomList" to="." method="_on_random_list_completed_list"]
 [connection signal="ingredientInPot" from="PlayerPot" to="RandomList" method="_on_player_pot_ingredient_in_pot"]

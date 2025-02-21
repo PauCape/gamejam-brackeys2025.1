@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://br11571gojwf3"]
 
 [ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_g3m36"]
-[ext_resource type="FontFile" uid="uid://cjlkjq5rse0vx" path="res://Fonts/PixelifySans-Bold.ttf" id="1_xvqyn"]
+[ext_resource type="FontFile" uid="uid://1chvoa3e3luu" path="res://Fonts/LilitaOne-Regular.ttf" id="2_xcaa7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jw7s4"]
 bg_color = Color(0, 0, 0, 0.305882)
@@ -37,8 +37,13 @@ offset_right = 301.0
 offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("1_xvqyn")
-theme_override_font_sizes/normal_font_size = 146
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/normal_font = ExtResource("2_xcaa7")
+theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "[rainbow]YOU WIN![/rainbow]"
+text = "[center][rainbow freq=.5 sat=0.8 val=0.9][wave amp = 1000.0 freq=10.0 connected=1]YOU WIN![/wave][/rainbow][/center]"
 fit_content = true

@@ -13,7 +13,12 @@ func _on_main_start_clock() -> void:
 	
 func _on_timer_timeout() -> void:
 	segundos = segundos + 1
-	textureProgressBar.value = textureProgressBar.value - 25
-	if segundos == 4:
+	textureProgressBar.value = textureProgressBar.value - 10
+	if segundos == 10:
 		timer.stop()
 		clockStopped.emit()
+
+func _on_main_reset_clock() -> void:
+	textureProgressBar.value = 100
+	segundos = 0
+	timer.stop()
