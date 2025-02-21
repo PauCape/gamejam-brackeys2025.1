@@ -14,6 +14,9 @@ func _ready() -> void:
 	await get_tree().create_timer(4).timeout
 	
 	hideList.emit()
+	
+	# Podemos en marcha el reloj ()
+	startClock.emit()
 
 func _on_random_list_completed_list() -> void:
 	

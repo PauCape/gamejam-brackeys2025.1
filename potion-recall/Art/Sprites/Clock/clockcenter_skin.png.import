@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6jso2oimuh8q"
-path="res://.godot/imported/progress-bar-circle.png-aebd46e63758869428c842701c627c43.ctex"
+uid="uid://d235jw18fniy7"
+path="res://.godot/imported/clockcenter_skin.png-e83e60e4cc7c4bab9c91c3f0d2f5e5f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/progress-bar-circle.png"
-dest_files=["res://.godot/imported/progress-bar-circle.png-aebd46e63758869428c842701c627c43.ctex"]
+source_file="res://Art/Sprites/Clock/clockcenter_skin.png"
+dest_files=["res://.godot/imported/clockcenter_skin.png-e83e60e4cc7c4bab9c91c3f0d2f5e5f5.ctex"]
 
 [params]
 

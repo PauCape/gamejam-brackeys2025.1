@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp78ugm8iq4km"]
+[gd_scene load_steps=7 format=3 uid="uid://bp78ugm8iq4km"]
 
 [ext_resource type="Script" path="res://Scripts/game_logic.gd" id="1_02gdl"]
 [ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="1_3p53i"]
 [ext_resource type="PackedScene" uid="uid://cl68ie0s1kwqi" path="res://Scenes/Ingredients/ingredient_generator.tscn" id="4_poahg"]
+[ext_resource type="PackedScene" uid="uid://or3f4o30gqij" path="res://Scenes/game_time.tscn" id="6_00n75"]
 [ext_resource type="PackedScene" uid="uid://btrvcol50r6cv" path="res://Scenes/random_list.tscn" id="6_dh7k8"]
 [ext_resource type="PackedScene" uid="uid://bgh38oy0k12fs" path="res://Scenes/player_pot.tscn" id="6_tvlwm"]
 
@@ -59,8 +60,11 @@ ingredient = "mushroom"
 [node name="MainCamera" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
+[node name="GameTime" parent="." instance=ExtResource("6_00n75")]
+
 [connection signal="hideList" from="." to="RandomList" method="_on_main_hide_list"]
 [connection signal="reloadList" from="." to="RandomList" method="_on_main_reload_list"]
 [connection signal="badIngredient" from="RandomList" to="." method="_on_random_list_bad_ingredient"]
 [connection signal="completedList" from="RandomList" to="." method="_on_random_list_completed_list"]
 [connection signal="ingredientInPot" from="PlayerPot" to="RandomList" method="_on_player_pot_ingredient_in_pot"]
+[connection signal="startClock" from="." to="GameTime" method="_on_main_start_clock"]
