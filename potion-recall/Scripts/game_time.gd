@@ -1,9 +1,11 @@
 extends Node
 
-var totalTime = 10.0
+var totalTime = 4.0
 var sec = totalTime
 var currentTime = sec
 var minute = 0.0
+
+signal clockStopped
 
 func _ready() -> void:
 	$Clock/TimeStatus.text = str(minute) + "0" + ":" + str(totalTime)
@@ -17,14 +19,7 @@ func game_time():
 		countdown()
 		$Clock/TimeStatus.text = str(minute) + "0" + ":" + str(sec)
 	else:	
-		$TimeOutScreen.time_out_screen()
-	#else:
-		#sec = startTime - 1
-		#if minute > 0:
-			#minute -= 1
-			#$timeStatus.text = str(minute) + ":" + str(sec)
-		#else:
-			#$Timer.stop()
+		clockStopped.emit()
 
 func countdown():
 	currentTime -= 1
@@ -32,16 +27,11 @@ func countdown():
 	# llama  la funcion de clock para modificar el reloj
 	$Clock.set_value(time_bar_progress) 
 
-func reset():
-	totalTime = 30
-
 func _on_timer_timeout() -> void:
 	game_time()
 
 func _on_main_start_clock() -> void:
-	#totalTime = seconds
-	#sec = seconds
-	#currentTime = totalTime
-	#$Timer.start(seconds)
 	get_tree().paused = false
-	
+
+func _on_main_game_lost() -> void:
+	$TimeOutScreen.time_out_screen()

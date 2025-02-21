@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bp78ugm8iq4km"]
+[gd_scene load_steps=8 format=3 uid="uid://bp78ugm8iq4km"]
 
 [ext_resource type="Script" path="res://Scripts/game_logic.gd" id="1_02gdl"]
 [ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="1_3p53i"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://or3f4o30gqij" path="res://Scenes/game_time.tscn" id="6_00n75"]
 [ext_resource type="PackedScene" uid="uid://btrvcol50r6cv" path="res://Scenes/random_list.tscn" id="6_dh7k8"]
 [ext_resource type="PackedScene" uid="uid://bgh38oy0k12fs" path="res://Scenes/Player_Pot.tscn" id="6_tvlwm"]
+[ext_resource type="PackedScene" uid="uid://co4wbftifup6" path="res://Scenes/time_out_screen.tscn" id="7_uu2a7"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_02gdl")
@@ -59,6 +60,10 @@ offset_bottom = -2.0
 
 [node name="GameTime" parent="." instance=ExtResource("6_00n75")]
 
+[node name="TimeOutScreen" parent="." instance=ExtResource("7_uu2a7")]
+
+[connection signal="gameLost" from="." to="GameTime" method="_on_main_game_lost"]
 [connection signal="hideList" from="." to="RandomList" method="_on_main_hide_list"]
 [connection signal="reloadList" from="." to="RandomList" method="_on_main_reload_list"]
 [connection signal="startClock" from="." to="GameTime" method="_on_main_start_clock"]
+[connection signal="clockStopped" from="GameTime" to="." method="_on_game_time_clock_stopped"]

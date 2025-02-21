@@ -2,7 +2,8 @@ extends Node
 
 signal reloadList(levelNumber)
 signal hideList
-signal startClock(seconds)
+signal startClock()
+signal gameLost
 
 func _ready() -> void:
 	reloadList.emit(1)
@@ -18,4 +19,8 @@ func _ready() -> void:
 # Enviar la señal de mostrar pantalla ganadora
 
 # Recibimos la condicion de que ha perdido
-# Enviar la señal de que hemos perdido
+
+# señal de que el tiempo se ha acabado
+func _on_game_time_clock_stopped() -> void:
+	$TimeOutScreen.time_out_screen()
+	print("has perdido")
