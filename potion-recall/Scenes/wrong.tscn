@@ -3,7 +3,25 @@
 [ext_resource type="Script" path="res://Scripts/time_out_screen.gd" id="1_d1uqq"]
 [ext_resource type="FontFile" uid="uid://bk3kh80wcnr0f" path="res://Assets/LilitaOne-Regular.ttf" id="1_npr4l"]
 
-[sub_resource type="Animation" id="Animation_c5hnm"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56cpg"]
+bg_color = Color(0.16, 0.16, 0.16, 0.772549)
+
+[sub_resource type="Animation" id="Animation_c08d4"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kdirj"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -15,45 +33,22 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_fy4vb"]
-resource_name = "show"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.0333333, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fbc2x"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ji2ku"]
 _data = {
-"RESET": SubResource("Animation_c5hnm"),
-"show": SubResource("Animation_fy4vb")
+"RESET": SubResource("Animation_kdirj"),
+"show": SubResource("Animation_c08d4")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56cpg"]
-bg_color = Color(0.16, 0.16, 0.16, 0.772549)
-
-[node name="TimeOutScreen" type="Control"]
+[node name="Wrong" type="Control"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 320.0
 offset_bottom = 180.0
 script = ExtResource("1_d1uqq")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_fbc2x")
-}
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -84,3 +79,8 @@ theme_override_font_sizes/normal_font_size = 45
 bbcode_enabled = true
 text = "[center][rainbow freq=.5 sat=0.8 val=0.9][wave amp = 1000.0 freq=10.0 connected=1]Something went wrong![/wave][/rainbow][/center]"
 fit_content = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ji2ku")
+}

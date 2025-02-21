@@ -1,6 +1,6 @@
 extends Node
 
-@onready var timeOutScreen: Control = $TimeOutScreen
+@onready var timeOutScreen: Control = $Wrong
 
 signal reloadList(levelNumber)
 signal hideList
