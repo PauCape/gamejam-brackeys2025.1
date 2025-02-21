@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dptgu2r3fp4hi"
-path="res://.godot/imported/parchment.png-2188dd3d48b6d6605a1d485a75162d58.ctex"
+path="res://.godot/imported/Parchment.png-aa5cf1cbb9b9295528a4f5baeabc9958.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprites/parchment.png"
-dest_files=["res://.godot/imported/parchment.png-2188dd3d48b6d6605a1d485a75162d58.ctex"]
+source_file="res://Art/Sprites/Parchment.png"
+dest_files=["res://.godot/imported/Parchment.png-aa5cf1cbb9b9295528a4f5baeabc9958.ctex"]
 
 [params]
 

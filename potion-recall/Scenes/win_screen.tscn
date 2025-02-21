@@ -3,26 +3,24 @@
 [ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_g3m36"]
 [ext_resource type="FontFile" uid="uid://1chvoa3e3luu" path="res://Fonts/LilitaOne-Regular.ttf" id="2_xcaa7"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jw7s4"]
-bg_color = Color(0, 0, 0, 0.305882)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8y2a"]
+bg_color = Color(0.16, 0.16, 0.16, 0.772549)
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -960.0
+offset_bottom = -540.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_g3m36")
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_jw7s4")
+offset_right = 320.0
+offset_bottom = 180.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s8y2a")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 layout_mode = 1
@@ -32,9 +30,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -301.0
-offset_top = -88.0
+offset_top = -29.0
 offset_right = 301.0
-offset_bottom = 88.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

@@ -4,14 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="1_3p53i"]
 [ext_resource type="PackedScene" uid="uid://cl68ie0s1kwqi" path="res://Scenes/Ingredients/ingredient_generator.tscn" id="4_poahg"]
 [ext_resource type="PackedScene" uid="uid://btrvcol50r6cv" path="res://Scenes/random_list.tscn" id="6_dh7k8"]
-[ext_resource type="PackedScene" uid="uid://bgh38oy0k12fs" path="res://Scenes/player_pot.tscn" id="6_tvlwm"]
-[ext_resource type="PackedScene" uid="uid://co4wbftifup6" path="res://Scenes/time_out_screen.tscn" id="7_uu2a7"]
+[ext_resource type="PackedScene" uid="uid://bgh38oy0k12fs" path="res://Scenes/Player_Pot.tscn" id="6_tvlwm"]
+[ext_resource type="PackedScene" uid="uid://co4wbftifup6" path="res://Scenes/wrong.tscn" id="7_uu2a7"]
 [ext_resource type="PackedScene" uid="uid://dk4ltfciyiin4" path="res://Scenes/pause_menu.tscn" id="8_8my5c"]
 [ext_resource type="PackedScene" uid="uid://c5p1x6kesl7ss" path="res://Scenes/clock.tscn" id="8_pia18"]
 [ext_resource type="PackedScene" uid="uid://br11571gojwf3" path="res://Scenes/win_screen.tscn" id="9_5suci"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_02gdl")
+
+[node name="MainCamera" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
 
 [node name="WallBackground" type="Sprite2D" parent="."]
 texture = ExtResource("1_3p53i")
@@ -60,14 +63,11 @@ ingredient = "honeycomb"
 position = Vector2(-88, 56)
 ingredient = "mushroom"
 
-[node name="MainCamera" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-
 [node name="Clock" parent="." instance=ExtResource("8_pia18")]
 offset_top = -8.0
 offset_bottom = -8.0
 
-[node name="TimeOutScreen" parent="." instance=ExtResource("7_uu2a7")]
+[node name="Wrong" parent="." instance=ExtResource("7_uu2a7")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -80,12 +80,19 @@ offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="WinScreen" parent="." instance=ExtResource("9_5suci")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -160.0
+offset_top = -90.0
+offset_right = -160.0
+offset_bottom = -90.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="PauseMenu" parent="." instance=ExtResource("8_8my5c")]
 visible = false
-
-[node name="WinScreen" parent="." instance=ExtResource("9_5suci")]
-offset_top = 56.0
-offset_bottom = 56.0
 
 [connection signal="hideList" from="." to="RandomList" method="_on_main_hide_list"]
 [connection signal="reloadList" from="." to="RandomList" method="_on_main_reload_list"]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://chp3gwm8vu3k2"]
+[gd_scene load_steps=7 format=3 uid="uid://chp3gwm8vu3k2"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_0xdhl"]
 [ext_resource type="FontFile" uid="uid://1chvoa3e3luu" path="res://Fonts/LilitaOne-Regular.ttf" id="1_q8x7h"]
+[ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="2_5ftm1"]
 [ext_resource type="PackedScene" uid="uid://cp7e0f42le6av" path="res://Scenes/fade_transition.tscn" id="3_f8tfd"]
+[ext_resource type="FontFile" uid="uid://bk3kh80wcnr0f" path="res://Assets/LilitaOne-Regular.ttf" id="4_hyjmq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn6ws"]
 bg_color = Color(0, 0, 0, 0.501961)
@@ -16,17 +18,27 @@ border_blend = true
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_0xdhl")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5ftm1")
+
 [node name="ButtonManager" type="VBoxContainer" parent="."]
-offset_left = 331.0
-offset_top = 257.0
-offset_right = 523.0
-offset_bottom = 315.0
-scale = Vector2(3.015, 3.015)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -13.0
+offset_right = 51.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
 
 [node name="StartButton" type="Button" parent="ButtonManager"]
 layout_mode = 2
+theme_override_constants/align_to_largest_stylebox = 0
 theme_override_fonts/font = ExtResource("1_q8x7h")
-theme_override_styles/hover = SubResource("StyleBoxFlat_kn6ws")
 text = "START"
 
 [node name="ExitButton" type="Button" parent="ButtonManager"]
@@ -40,20 +52,28 @@ visible = false
 
 [node name="FadeTimer" type="Timer" parent="FadeTransition"]
 
-[node name="Logo" type="Label" parent="."]
-offset_left = 331.0
-offset_top = 108.0
-offset_right = 917.0
-offset_bottom = 206.0
-theme_override_colors/font_color = Color(0.560784, 0.423529, 0.72549, 0.921569)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -190.5
+offset_top = -80.0
+offset_right = 190.5
+offset_bottom = -28.0
+grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = -1
-theme_override_fonts/font = ExtResource("1_q8x7h")
-theme_override_font_sizes/font_size = 85
-text = "POTION RECALL"
-metadata/_edit_use_anchors_ = true
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/normal_font = ExtResource("4_hyjmq")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center][rainbow freq=.5 sat=0.8 val=0.9][wave amp = 1000.0 freq=10.0 connected=1]POTION RECALL[/wave][/rainbow][/center]"
+fit_content = true
+
+[node name="MainCamera" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
 
 [connection signal="pressed" from="ButtonManager/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ButtonManager/ExitButton" to="." method="_on_exit_button_pressed"]
