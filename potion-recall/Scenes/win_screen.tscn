@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://br11571gojwf3"]
+
+[ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_g3m36"]
+[ext_resource type="FontFile" uid="uid://cjlkjq5rse0vx" path="res://Fonts/PixelifySans-Bold.ttf" id="1_xvqyn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jw7s4"]
+bg_color = Color(0, 0, 0, 0.305882)
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g3m36")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jw7s4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.0
+offset_top = -88.0
+offset_right = 301.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_xvqyn")
+theme_override_font_sizes/normal_font_size = 146
+bbcode_enabled = true
+text = "[rainbow]YOU WIN![/rainbow]"
+fit_content = true

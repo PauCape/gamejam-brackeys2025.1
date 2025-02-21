@@ -1,67 +1,66 @@
-[gd_scene load_steps=13 format=3 uid="uid://bp78ugm8iq4km"]
+[gd_scene load_steps=6 format=3 uid="uid://bp78ugm8iq4km"]
 
+[ext_resource type="Script" path="res://Scripts/game_logic.gd" id="1_02gdl"]
 [ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="1_3p53i"]
-[ext_resource type="PackedScene" uid="uid://bxohhnqys2elj" path="res://Scenes/Ingredients/ingredient_berries.tscn" id="1_53dn0"]
-[ext_resource type="PackedScene" uid="uid://bj170frgq8015" path="res://Scenes/Ingredients/ingredient_butterfly.tscn" id="1_o7a2l"]
-[ext_resource type="Texture2D" uid="uid://cfcrdhsl1qpfa" path="res://Art/Sprites/Pot.png" id="2_1qopo"]
-[ext_resource type="PackedScene" uid="uid://coxh2pn7ix5qu" path="res://Scenes/Ingredients/ingredient_egg.tscn" id="3_a1iqt"]
-[ext_resource type="PackedScene" uid="uid://cpeksuqatdcxh" path="res://Scenes/Ingredients/ingredient_flower.tscn" id="4_ff5kl"]
-[ext_resource type="PackedScene" uid="uid://b0in8683xkex0" path="res://Scenes/Ingredients/ingredient_garlic.tscn" id="7_a4teg"]
-[ext_resource type="PackedScene" uid="uid://bum2a10f0q2sy" path="res://Scenes/Ingredients/ingredient_herb.tscn" id="8_4ah48"]
-[ext_resource type="PackedScene" uid="uid://caqvkl642ri1d" path="res://Scenes/drop_area.tscn" id="9_4ctsn"]
-[ext_resource type="PackedScene" uid="uid://bkl5u0ft12cf4" path="res://Scenes/Ingredients/ingredient_honeycomb.tscn" id="9_ullni"]
-[ext_resource type="PackedScene" uid="uid://xv8kem2iy1ve" path="res://Scenes/Ingredients/ingredient_mushroom.tscn" id="10_05up7"]
-[ext_resource type="PackedScene" uid="uid://dk4ltfciyiin4" path="res://Scenes/pause_menu.tscn" id="13_m4bqs"]
+[ext_resource type="PackedScene" uid="uid://cl68ie0s1kwqi" path="res://Scenes/Ingredients/ingredient_generator.tscn" id="4_poahg"]
+[ext_resource type="PackedScene" uid="uid://btrvcol50r6cv" path="res://Scenes/random_list.tscn" id="6_dh7k8"]
+[ext_resource type="PackedScene" uid="uid://bgh38oy0k12fs" path="res://Scenes/player_pot.tscn" id="6_tvlwm"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_02gdl")
 
 [node name="WallBackground" type="Sprite2D" parent="."]
-position = Vector2(640, 360)
-scale = Vector2(4, 4)
 texture = ExtResource("1_3p53i")
 metadata/_edit_lock_ = true
 
-[node name="Pot" type="Sprite2D" parent="."]
-position = Vector2(640, 510)
-scale = Vector2(3, 3)
-texture = ExtResource("2_1qopo")
+[node name="RandomList" parent="." instance=ExtResource("6_dh7k8")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="PlayerPot" parent="." instance=ExtResource("6_tvlwm")]
+position = Vector2(0, 34)
+scale = Vector2(0.78, 0.78)
 metadata/_edit_lock_ = true
 
-[node name="Berries" parent="." instance=ExtResource("1_53dn0")]
-position = Vector2(85, 82)
+[node name="Ingredient Generator" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(-128, -64)
+ingredient = "berries"
 
-[node name="Butterfly" parent="." instance=ExtResource("1_o7a2l")]
-position = Vector2(271, 90)
+[node name="Ingredient Generator2" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(-88, -64)
 
-[node name="Egg" parent="." instance=ExtResource("3_a1iqt")]
-position = Vector2(100, 233)
+[node name="Ingredient Generator3" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(-128, -24)
+ingredient = "flower"
 
-[node name="Flower" parent="." instance=ExtResource("4_ff5kl")]
-position = Vector2(262, 241)
+[node name="Ingredient Generator4" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(-88, -24)
+ingredient = "butterfly"
 
-[node name="Garlic" parent="." instance=ExtResource("7_a4teg")]
-position = Vector2(80, 421)
+[node name="Ingredient Generator5" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(-88, 16)
+ingredient = "garlic"
 
-[node name="Herb" parent="." instance=ExtResource("8_4ah48")]
-position = Vector2(268, 408)
+[node name="Ingredient Generator6" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(-128, 16)
+ingredient = "herb"
 
-[node name="Honeycomb" parent="." instance=ExtResource("9_ullni")]
-position = Vector2(87, 611)
+[node name="Ingredient Generator7" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(-128, 56)
+ingredient = "honeycomb"
 
-[node name="Mushroom" parent="." instance=ExtResource("10_05up7")]
-position = Vector2(271, 594)
+[node name="Ingredient Generator8" parent="." instance=ExtResource("4_poahg")]
+position = Vector2(-88, 56)
+ingredient = "mushroom"
 
-[node name="Drop Area" parent="." instance=ExtResource("9_4ctsn")]
-position = Vector2(640, 398)
-metadata/_edit_lock_ = true
+[node name="MainCamera" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
 
-[node name="PauseMenu" parent="." instance=ExtResource("13_m4bqs")]
-
-[connection signal="body_entered" from="Drop Area" to="Berries" method="_on_drop_area_body_entered"]
-[connection signal="body_entered" from="Drop Area" to="Butterfly" method="_on_drop_area_body_entered"]
-[connection signal="body_entered" from="Drop Area" to="Egg" method="_on_drop_area_body_entered"]
-[connection signal="body_entered" from="Drop Area" to="Flower" method="_on_drop_area_body_entered"]
-[connection signal="body_entered" from="Drop Area" to="Garlic" method="_on_drop_area_body_entered"]
-[connection signal="body_entered" from="Drop Area" to="Herb" method="_on_drop_area_body_entered"]
-[connection signal="body_entered" from="Drop Area" to="Honeycomb" method="_on_drop_area_body_entered"]
-[connection signal="body_entered" from="Drop Area" to="Mushroom" method="_on_drop_area_body_entered"]
+[connection signal="hideList" from="." to="RandomList" method="_on_main_hide_list"]
+[connection signal="reloadList" from="." to="RandomList" method="_on_main_reload_list"]
+[connection signal="badIngredient" from="RandomList" to="." method="_on_random_list_bad_ingredient"]
+[connection signal="completedList" from="RandomList" to="." method="_on_random_list_completed_list"]
+[connection signal="ingredientInPot" from="PlayerPot" to="RandomList" method="_on_player_pot_ingredient_in_pot"]

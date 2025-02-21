@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c81rt3xjm5346"]
+
+[ext_resource type="FontFile" uid="uid://dnlko8yo8bgk" path="res://Assets/LilitaOne-Regular.ttf" id="1_v2rjw"]
+
+[node name="PlayButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_v2rjw")
+theme_override_font_sizes/font_size = 40
+text = "PLAY"

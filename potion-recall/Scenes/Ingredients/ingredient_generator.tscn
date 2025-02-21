@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl68ie0s1kwqi"]
+
+[ext_resource type="Script" path="res://Scripts/ingredient_generator.gd" id="1_orpky"]
+[ext_resource type="Texture2D" uid="uid://cpnlv26od0hoc" path="res://Art/Sprites/Ingredients/berries.png" id="2_bst0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7erp"]
+size = Vector2(28, 28)
+
+[node name="Ingredient Generator" type="Area2D"]
+script = ExtResource("1_orpky")
+ingredient = "egg"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bst0g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a7erp")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

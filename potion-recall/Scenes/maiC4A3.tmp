@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp78ugm8iq4km"]
+
+[ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="1_3p53i"]
+[ext_resource type="Texture2D" uid="uid://cfcrdhsl1qpfa" path="res://Art/Sprites/pot.png" id="2_1qopo"]
+[ext_resource type="PackedScene" uid="uid://d1801160bex6u" path="res://Scenes/ingredient_shelf.tscn" id="4_jfact"]
+[ext_resource type="PackedScene" uid="uid://caqvkl642ri1d" path="res://Scenes/drop_area.tscn" id="9_4ctsn"]
+
+[node name="Main" type="Node2D"]
+
+[node name="WallBackground" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+texture = ExtResource("1_3p53i")
+metadata/_edit_lock_ = true
+
+[node name="Pot" type="Sprite2D" parent="."]
+position = Vector2(640, 510)
+scale = Vector2(3, 3)
+texture = ExtResource("2_1qopo")
+metadata/_edit_lock_ = true
+
+[node name="Drop Area" parent="." instance=ExtResource("9_4ctsn")]
+position = Vector2(640, 398)
+metadata/_edit_lock_ = true
+
+[node name="Ingredient Shelf" parent="." instance=ExtResource("4_jfact")]
+position = Vector2(288, 337)
+
+[node name="Ingredient Shelf2" parent="." instance=ExtResource("4_jfact")]
+position = Vector2(646, 147)
+ingredient = "egg"
+
+[node name="Ingredient Shelf3" parent="." instance=ExtResource("4_jfact")]
+position = Vector2(1039, 407)
+ingredient = "flower"
+
+[connection signal="body_entered" from="Drop Area" to="Drop Area" method="_on_body_entered"]

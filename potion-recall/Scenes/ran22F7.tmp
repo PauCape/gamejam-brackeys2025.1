@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://btrvcol50r6cv"]
+
+[ext_resource type="Script" path="res://Scripts/control.gd" id="1_m2w3t"]
+[ext_resource type="FontFile" uid="uid://cjlkjq5rse0vx" path="res://Fonts/PixelifySans-Bold.ttf" id="2_7l888"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfam7"]
+bg_color = Color(0.439216, 0, 0.905882, 0.635294)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0, 0, 0, 0)
+shadow_size = 1
+
+[node name="RandomList" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m2w3t")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+offset_left = 855.0
+offset_top = 186.0
+offset_right = 1173.0
+offset_bottom = 560.0
+mouse_filter = 2
+mouse_default_cursor_shape = 7
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_7l888")
+theme_override_font_sizes/font_size = 46
+theme_override_styles/panel = SubResource("StyleBoxFlat_wfam7")
+allow_search = false
+
+[node name="LevelNameLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 66.0
+offset_right = 1117.0
+offset_bottom = 156.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_7l888")
+theme_override_font_sizes/normal_font_size = 65
+text = "LEVEL"
+fit_content = true
+
+[node name="LevelNumberLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 0
+offset_left = 1107.0
+offset_top = 66.0
+offset_right = 1140.0
+offset_bottom = 145.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_7l888")
+theme_override_font_sizes/normal_font_size = 65
+text = "1"
+fit_content = true
+scroll_active = false
