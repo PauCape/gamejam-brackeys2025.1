@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://btrvcol50r6cv"]
 
 [ext_resource type="Script" path="res://Scripts/random_list.gd" id="1_m2w3t"]
-[ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="2_cipns"]
+[ext_resource type="Texture2D" uid="uid://dptgu2r3fp4hi" path="res://Art/Sprites/parchment.png" id="2_bsmi8"]
 [ext_resource type="FontFile" uid="uid://btf7nr25m1u7x" path="res://Assets/PixelifySans-Bold.ttf" id="3_1stgg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lw8o4"]
@@ -16,14 +16,15 @@ grow_vertical = 2
 script = ExtResource("1_m2w3t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_cipns")
+position = Vector2(101, 0)
+texture = ExtResource("2_bsmi8")
 
 [node name="ItemList" type="ItemList" parent="."]
 layout_mode = 0
-offset_left = 64.0
-offset_top = -64.0
-offset_right = 144.0
-offset_bottom = 56.0
+offset_left = 67.0
+offset_top = -62.0
+offset_right = 147.0
+offset_bottom = 58.0
 mouse_filter = 2
 mouse_default_cursor_shape = 7
 theme_override_colors/font_color = Color(1, 1, 1, 1)
