@@ -9,7 +9,7 @@ signal startClock
 signal resetClock
 signal win
 
-var finalLevel = 1
+var finalLevel = 4
 var level = 1
 
 func _ready() -> void:

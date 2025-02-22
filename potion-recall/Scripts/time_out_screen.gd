@@ -10,3 +10,5 @@ func time_out_screen():
 	wrong_sound.play()
 	self.show()
 	$AnimationPlayer.play("show")
+	await get_tree().create_timer(3).timeout
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
