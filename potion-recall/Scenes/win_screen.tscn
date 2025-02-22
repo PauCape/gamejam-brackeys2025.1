@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://br11571gojwf3"]
+[gd_scene load_steps=5 format=3 uid="uid://br11571gojwf3"]
 
 [ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_g3m36"]
 [ext_resource type="FontFile" uid="uid://1chvoa3e3luu" path="res://Fonts/LilitaOne-Regular.ttf" id="2_xcaa7"]
-[ext_resource type="AudioStream" uid="uid://b0osf37allcsp" path="res://Assets/Sounds/nothing has gone wrong.wav" id="3_54evg"]
 [ext_resource type="AudioStream" uid="uid://ce6l64po6vc0m" path="res://Assets/Sounds/magical-twinkle.mp3" id="3_loe3q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8y2a"]
@@ -53,6 +52,3 @@ fit_content = true
 stream = ExtResource("3_loe3q")
 volume_db = 5.0
 attenuation = 3.48219
-
-[node name="NothingWrongSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_54evg")

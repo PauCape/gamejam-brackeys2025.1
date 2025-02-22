@@ -40,8 +40,6 @@ func _on_random_list_completed_list() -> void:
 	hideList.emit()
 
 func _on_random_list_bad_ingredient() -> void:
-	print($PlayerPot.get_child(-1).name)
-	$PlayerPot.get_child(-1).queue_free()
 	music.stop()
 	resetClock.emit()
 	timeOutScreen.time_out_screen()
@@ -51,4 +49,4 @@ func _on_clock_clock_stopped() -> void:
 	timeOutScreen.time_out_screen()
 
 func _on_clock_half_time() -> void:
-	music.pitch_scale = 1.8
+	music.pitch_scale = 1.5

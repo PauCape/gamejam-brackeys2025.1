@@ -3,9 +3,10 @@ extends Control
 signal completedList
 signal badIngredient
 
-#@onready var levelNumberLabel: RichTextLabel = $LevelNumberLabel
 @onready var itemList: ItemList = $ItemList
 @onready var player_pot: Node2D = $"../PlayerPot"
+@onready var bad_ingredient_sound: AudioStreamPlayer2D = $BadIngredientSound
+@onready var right_ingredient_sound: AudioStreamPlayer2D = $RightIngredientSound
 
 @export var levelNumber = 1
 @export var difficulty = 2
@@ -23,6 +24,7 @@ func _on_player_pot_ingredient_in_pot(body: Variant) -> void:
 		var greenColor = Color(0, 1, 0, 1)
 		
 		if itemList.get_item_text(globalIndex) == body.name:
+			right_ingredient_sound.play()
 			itemList.set_item_custom_fg_color(globalIndex, greenColor)
 			
 			if globalIndex == itemList.get_item_count() - 1:
@@ -32,6 +34,7 @@ func _on_player_pot_ingredient_in_pot(body: Variant) -> void:
 			globalIndex = globalIndex + 1
 		else:
 			itemList.set_item_custom_fg_color(globalIndex, redColor)
+			bad_ingredient_sound.play()
 			badIngredient.emit()
 
 

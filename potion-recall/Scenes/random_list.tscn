@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://btrvcol50r6cv"]
+[gd_scene load_steps=7 format=3 uid="uid://btrvcol50r6cv"]
 
 [ext_resource type="Script" path="res://Scripts/random_list.gd" id="1_m2w3t"]
 [ext_resource type="Texture2D" uid="uid://dptgu2r3fp4hi" path="res://Art/Sprites/Parchment.png" id="2_bsmi8"]
 [ext_resource type="FontFile" uid="uid://btf7nr25m1u7x" path="res://Assets/PixelifySans-Bold.ttf" id="3_1stgg"]
+[ext_resource type="AudioStream" uid="uid://dxmbcyw406e1i" path="res://Assets/Sounds/wet-splat.wav" id="4_nmk76"]
+[ext_resource type="AudioStream" uid="uid://mwvofijb0jw1" path="res://Assets/Sounds/powerUp.wav" id="5_w0el1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lw8o4"]
 
@@ -33,3 +35,10 @@ theme_override_font_sizes/font_size = 10
 theme_override_styles/panel = SubResource("StyleBoxEmpty_lw8o4")
 allow_search = false
 auto_height = true
+
+[node name="BadIngredientSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_nmk76")
+
+[node name="RightIngredientSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_w0el1")
+volume_db = -10.0

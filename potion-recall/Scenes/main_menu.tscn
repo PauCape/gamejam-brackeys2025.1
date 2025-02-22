@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cp7e0f42le6av" path="res://Scenes/fade_transition.tscn" id="3_f8tfd"]
 [ext_resource type="FontFile" uid="uid://bk3kh80wcnr0f" path="res://Assets/LilitaOne-Regular.ttf" id="4_hyjmq"]
 [ext_resource type="AudioStream" uid="uid://clx0quvfbxmgg" path="res://Assets/Sounds/playful-music.mp3" id="6_ynqxk"]
-[ext_resource type="AudioStream" uid="uid://mwvofijb0jw1" path="res://Assets/Sounds/powerUp.wav" id="7_wr53a"]
+[ext_resource type="AudioStream" uid="uid://dbapq7qkeh7hc" path="res://Assets/Sounds/normal-click.wav" id="7_ccuad"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk3cq"]
 bg_color = Color(0.6, 0.866667, 0.227451, 0.682353)
@@ -121,12 +121,11 @@ zoom = Vector2(4, 4)
 
 [node name="MusicMenu" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_ynqxk")
-volume_db = 5.0
 autoplay = true
 
 [node name="StartSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_wr53a")
-volume_db = -1.321
+stream = ExtResource("7_ccuad")
+volume_db = 1.321
 
 [connection signal="pressed" from="ButtonManager/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ButtonManager/ExitButton" to="." method="_on_exit_button_pressed"]

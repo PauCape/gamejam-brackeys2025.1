@@ -97,7 +97,6 @@ visible = false
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_27u58")
-volume_db = 5.0
 autoplay = true
 
 [connection signal="hideList" from="." to="RandomList" method="_on_main_hide_list"]

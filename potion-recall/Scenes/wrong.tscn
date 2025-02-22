@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/time_out_screen.gd" id="1_d1uqq"]
 [ext_resource type="FontFile" uid="uid://bk3kh80wcnr0f" path="res://Assets/LilitaOne-Regular.ttf" id="1_npr4l"]
-[ext_resource type="AudioStream" uid="uid://dinc0u3551bru" path="res://Assets/Sounds/something went wrong reverb.wav" id="3_juo2v"]
+[ext_resource type="AudioStream" uid="uid://dtqrypcw3l5hc" path="res://Assets/Sounds/game-over.wav" id="3_i68ug"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56cpg"]
 bg_color = Color(0.16, 0.16, 0.16, 0.772549)
@@ -87,5 +87,4 @@ libraries = {
 }
 
 [node name="WrongSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_juo2v")
-volume_db = 5.0
+stream = ExtResource("3_i68ug")
