@@ -1,25 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://co4wbftifup6"]
+[gd_scene load_steps=8 format=3 uid="uid://co4wbftifup6"]
 
 [ext_resource type="Script" path="res://Scripts/time_out_screen.gd" id="1_d1uqq"]
 [ext_resource type="FontFile" uid="uid://bk3kh80wcnr0f" path="res://Assets/LilitaOne-Regular.ttf" id="1_npr4l"]
+[ext_resource type="AudioStream" uid="uid://dinc0u3551bru" path="res://Assets/Sounds/something went wrong reverb.wav" id="3_juo2v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56cpg"]
 bg_color = Color(0.16, 0.16, 0.16, 0.772549)
-
-[sub_resource type="Animation" id="Animation_c08d4"]
-resource_name = "show"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_kdirj"]
 length = 0.001
@@ -34,6 +20,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c08d4"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ji2ku"]
@@ -84,3 +85,7 @@ fit_content = true
 libraries = {
 "": SubResource("AnimationLibrary_ji2ku")
 }
+
+[node name="WrongSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_juo2v")
+volume_db = 5.0

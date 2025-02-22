@@ -1,19 +1,54 @@
-[gd_scene load_steps=7 format=3 uid="uid://chp3gwm8vu3k2"]
+[gd_scene load_steps=14 format=3 uid="uid://chp3gwm8vu3k2"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_0xdhl"]
 [ext_resource type="FontFile" uid="uid://1chvoa3e3luu" path="res://Fonts/LilitaOne-Regular.ttf" id="1_q8x7h"]
 [ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="2_5ftm1"]
 [ext_resource type="PackedScene" uid="uid://cp7e0f42le6av" path="res://Scenes/fade_transition.tscn" id="3_f8tfd"]
 [ext_resource type="FontFile" uid="uid://bk3kh80wcnr0f" path="res://Assets/LilitaOne-Regular.ttf" id="4_hyjmq"]
+[ext_resource type="AudioStream" uid="uid://clx0quvfbxmgg" path="res://Assets/Sounds/playful-music.mp3" id="6_ynqxk"]
+[ext_resource type="AudioStream" uid="uid://mwvofijb0jw1" path="res://Assets/Sounds/powerUp.wav" id="7_wr53a"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn6ws"]
-bg_color = Color(0, 0, 0, 0.501961)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.33, 0.33, 0.33, 1)
-border_blend = true
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk3cq"]
+bg_color = Color(0.6, 0.866667, 0.227451, 0.682353)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_admvw"]
+bg_color = Color(0.6, 0.866667, 0.227451, 0.835294)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbu5y"]
+bg_color = Color(0.6, 0.866667, 0.227451, 0.682353)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uuc7f"]
+bg_color = Color(0.6, 0.866667, 0.227451, 0)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.172549)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dens5"]
+bg_color = Color(0.568627, 0, 0.133333, 0.756863)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yi22h"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.172549)
+shadow_size = 1
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_0xdhl")
@@ -37,15 +72,23 @@ size_flags_horizontal = 0
 
 [node name="StartButton" type="Button" parent="ButtonManager"]
 layout_mode = 2
+theme_override_constants/outline_size = 1
 theme_override_constants/align_to_largest_stylebox = 0
 theme_override_fonts/font = ExtResource("1_q8x7h")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_fk3cq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_admvw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tbu5y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uuc7f")
 text = "START"
 
 [node name="ExitButton" type="Button" parent="ButtonManager"]
 layout_mode = 2
+theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("1_q8x7h")
-theme_override_styles/hover = SubResource("StyleBoxFlat_kn6ws")
-text = "EXIT"
+theme_override_styles/hover = SubResource("StyleBoxFlat_dens5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yi22h")
+text = "QUIT"
 
 [node name="FadeTransition" parent="." instance=ExtResource("3_f8tfd")]
 visible = false
@@ -64,7 +107,8 @@ grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
-theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/normal_font = ExtResource("4_hyjmq")
 theme_override_font_sizes/normal_font_size = 40
@@ -74,6 +118,15 @@ fit_content = true
 
 [node name="MainCamera" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+
+[node name="MusicMenu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ynqxk")
+volume_db = 5.0
+autoplay = true
+
+[node name="StartSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_wr53a")
+volume_db = -1.321
 
 [connection signal="pressed" from="ButtonManager/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ButtonManager/ExitButton" to="." method="_on_exit_button_pressed"]

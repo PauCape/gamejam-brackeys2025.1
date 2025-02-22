@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://br11571gojwf3"]
+[gd_scene load_steps=6 format=3 uid="uid://br11571gojwf3"]
 
 [ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_g3m36"]
 [ext_resource type="FontFile" uid="uid://1chvoa3e3luu" path="res://Fonts/LilitaOne-Regular.ttf" id="2_xcaa7"]
+[ext_resource type="AudioStream" uid="uid://b0osf37allcsp" path="res://Assets/Sounds/nothing has gone wrong.wav" id="3_54evg"]
+[ext_resource type="AudioStream" uid="uid://ce6l64po6vc0m" path="res://Assets/Sounds/magical-twinkle.mp3" id="3_loe3q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8y2a"]
 bg_color = Color(0.16, 0.16, 0.16, 0.772549)
@@ -18,6 +20,7 @@ grow_vertical = 2
 script = ExtResource("1_g3m36")
 
 [node name="Panel" type="Panel" parent="."]
+layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_s8y2a")
@@ -29,10 +32,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -301.0
-offset_top = -29.0
-offset_right = 301.0
-offset_bottom = 29.0
+offset_left = -161.0
+offset_top = -36.0
+offset_right = 161.0
+offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -41,7 +44,15 @@ theme_override_constants/outline_size = 7
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/normal_font = ExtResource("2_xcaa7")
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 31
 bbcode_enabled = true
-text = "[center][rainbow freq=.5 sat=0.8 val=0.9][wave amp = 1000.0 freq=10.0 connected=1]YOU WIN![/wave][/rainbow][/center]"
+text = "[center][rainbow freq=.5 sat=0.8 val=0.9][wave amp = 1000.0 freq=10.0 connected=1]NOTHING WENT WRONG![/wave][/rainbow][/center]"
 fit_content = true
+
+[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_loe3q")
+volume_db = 5.0
+attenuation = 3.48219
+
+[node name="NothingWrongSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_54evg")

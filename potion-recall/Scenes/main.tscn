@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bp78ugm8iq4km"]
+[gd_scene load_steps=11 format=3 uid="uid://bp78ugm8iq4km"]
 
 [ext_resource type="Script" path="res://Scripts/game_logic.gd" id="1_02gdl"]
 [ext_resource type="Texture2D" uid="uid://cbdifrcp3rsa0" path="res://Art/Sprites/wall_background.png" id="1_3p53i"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dk4ltfciyiin4" path="res://Scenes/pause_menu.tscn" id="8_8my5c"]
 [ext_resource type="PackedScene" uid="uid://c5p1x6kesl7ss" path="res://Scenes/clock.tscn" id="8_pia18"]
 [ext_resource type="PackedScene" uid="uid://br11571gojwf3" path="res://Scenes/win_screen.tscn" id="9_5suci"]
+[ext_resource type="AudioStream" uid="uid://csykae67vn2ai" path="res://Assets/Sounds/sorcerer-loop.mp3" id="10_27u58"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_02gdl")
@@ -94,12 +95,19 @@ grow_vertical = 1
 [node name="PauseMenu" parent="." instance=ExtResource("8_8my5c")]
 visible = false
 
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_27u58")
+volume_db = 5.0
+autoplay = true
+
 [connection signal="hideList" from="." to="RandomList" method="_on_main_hide_list"]
 [connection signal="reloadList" from="." to="RandomList" method="_on_main_reload_list"]
 [connection signal="resetClock" from="." to="Clock" method="_on_main_reset_clock"]
 [connection signal="startClock" from="." to="Clock" method="_on_main_start_clock"]
 [connection signal="win" from="." to="WinScreen" method="_on_main_win"]
 [connection signal="badIngredient" from="RandomList" to="." method="_on_random_list_bad_ingredient"]
+[connection signal="badIngredient" from="RandomList" to="PlayerPot" method="_on_random_list_bad_ingredient"]
 [connection signal="completedList" from="RandomList" to="." method="_on_random_list_completed_list"]
 [connection signal="ingredientInPot" from="PlayerPot" to="RandomList" method="_on_player_pot_ingredient_in_pot"]
 [connection signal="clockStopped" from="Clock" to="." method="_on_clock_clock_stopped"]
+[connection signal="halfTime" from="Clock" to="." method="_on_clock_half_time"]
