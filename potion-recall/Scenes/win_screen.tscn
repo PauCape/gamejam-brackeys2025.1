@@ -45,10 +45,10 @@ theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/normal_font = ExtResource("2_xcaa7")
 theme_override_font_sizes/normal_font_size = 31
 bbcode_enabled = true
-text = "[center][rainbow freq=.5 sat=0.8 val=0.9][wave amp = 1000.0 freq=10.0 connected=1]NOTHING WENT WRONG![/wave][/rainbow][/center]"
+text = "[center][rainbow freq=.5 sat=0.8 val=0.9][wave amp = 1000.0 freq=10.0 connected=1]RECIPE COMPLETED![/wave][/rainbow][/center]"
 fit_content = true
 
 [node name="WinSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_loe3q")
-volume_db = 5.0
+volume_db = 1.0
 attenuation = 3.48219

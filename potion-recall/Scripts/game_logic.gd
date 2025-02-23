@@ -5,7 +5,7 @@ extends Node
 
 signal reloadList(levelNumber)
 signal hideList
-signal startClock
+signal startClock(level)
 signal resetClock
 signal win
 
@@ -18,10 +18,12 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(4).timeout
 	
-	startClock.emit()
+	startClock.emit(level)
 	hideList.emit()
 
 func _on_random_list_completed_list() -> void:
+	
+	music.pitch_scale = 1
 	
 	if level == finalLevel:
 		win.emit()
@@ -34,9 +36,12 @@ func _on_random_list_completed_list() -> void:
 	reloadList.emit(level)
 	resetClock.emit()
 	
-	await get_tree().create_timer(4).timeout
-	
-	startClock.emit()
+	if level < 4:
+		await get_tree().create_timer(5).timeout
+	else:
+		await get_tree().create_timer(8).timeout
+		
+	startClock.emit(level)
 	hideList.emit()
 
 func _on_random_list_bad_ingredient() -> void:
@@ -49,4 +54,4 @@ func _on_clock_clock_stopped() -> void:
 	timeOutScreen.time_out_screen()
 
 func _on_clock_half_time() -> void:
-	music.pitch_scale = 1.5
+	music.pitch_scale = 1.7

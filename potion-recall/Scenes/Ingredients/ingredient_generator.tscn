@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl68ie0s1kwqi"]
+[gd_scene load_steps=5 format=3 uid="uid://cl68ie0s1kwqi"]
 
 [ext_resource type="Script" path="res://Scripts/ingredient_generator.gd" id="1_orpky"]
 [ext_resource type="Texture2D" uid="uid://cpnlv26od0hoc" path="res://Art/Sprites/Ingredients/berries.png" id="2_bst0g"]
+[ext_resource type="Texture2D" uid="uid://dporusayg4lmn" path="res://Art/Sprites/shelf.png" id="2_hjlys"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a7erp"]
 size = Vector2(28, 28)
@@ -9,6 +10,10 @@ size = Vector2(28, 28)
 [node name="Ingredient Generator" type="Area2D"]
 script = ExtResource("1_orpky")
 ingredient = "egg"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 16)
+texture = ExtResource("2_hjlys")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_bst0g")

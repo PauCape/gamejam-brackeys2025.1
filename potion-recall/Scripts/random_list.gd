@@ -23,7 +23,7 @@ func _on_player_pot_ingredient_in_pot(body: Variant) -> void:
 		var redColor = Color(1, 0, 0, 1)
 		var greenColor = Color(0, 1, 0, 1)
 		
-		if itemList.get_item_text(globalIndex) == body.name:
+		if body.name.begins_with(itemList.get_item_text(globalIndex)):
 			right_ingredient_sound.play()
 			itemList.set_item_custom_fg_color(globalIndex, greenColor)
 			

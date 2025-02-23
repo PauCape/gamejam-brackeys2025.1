@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 		var scene = load(scenePath)
 		var instance = scene.instantiate()
 		instance.position = get_global_mouse_position()
-		instance.name = ingredient.capitalize()
+		instance.name = ingredient.capitalize() +"_"+ str(get_parent().get_child_count())
 		instance.get_node("Sprite2D").texture = texture
 		get_parent().add_child(instance)
 

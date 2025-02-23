@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func _physics_process(delta) -> void:
 	
-	if position.y > 720:
+	if position.y > 180:
 		self.queue_free()
 		
 	if dragging:
